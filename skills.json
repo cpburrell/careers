@@ -1,0 +1,306 @@
+{
+	"skills": [
+		{
+			"name": "Strategy and Planning",
+			"id": "STPL",
+			"category_id": "STAR",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Security and Privacy", 
+			"id": "SEPR",
+			"category_id": "STAR",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Governance, Risk, and Compliance",
+			"id": "GORC",
+			"category_id": "STAR",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Advice and Guidance",
+			"id": "ADGU",
+			"category_id": "STAR",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Change Implemntation",
+			"id": "CHIM",
+			"category_id": "CHTR",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Change Analysis",
+			"id": "CHAN",
+			"category_id": "CHTR",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Change Planning",
+			"id": "CHPL",
+			"category_id": "CHTR",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Systems Development",
+			"id": "SYDE",
+			"category_id": "DEIM",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Data and Analytics",
+			"id": "DAAN",
+			"category_id": "DEIM",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "User Experience",
+			"id": "USEX",
+			"category_id": "DEIM",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Content Management",
+			"id": "COMA",
+			"category_id": "DEIM",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Computational Science",
+			"id": "COSC",
+			"category_id": "DEIM",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Stakeholder Management",
+			"id": "STMA",
+			"category_id": "REEN",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Sales and Marketing",
+			"id": "SAMA",
+			"category_id": "REEN",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Technology Management",
+			"id": "TEMA",
+			"category_id": "DEOP",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Service Management",
+			"id": "SEMA",
+			"category_id": "DEOP",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Security Services",
+			"id": "SESE",
+			"category_id": "DEOP",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "People Management",
+			"id": "PEMA",
+			"category_id": "PESK",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		},
+		{
+			"name": "Skills Management",
+			"id": "SKMA",
+			"category_id": "PESK",
+			"levels": [
+				{ "level": "1", "full_description": "", "brief_description": ""},
+				{ "level": "2", "full_description": "", "brief_description": ""},
+				{ "level": "3", "full_description": "", "brief_description": ""},
+				{ "level": "4", "full_description": "", "brief_description": ""},
+				{ "level": "5", "full_description": "", "brief_description": ""},
+				{ "level": "6", "full_description": "", "brief_description": ""},
+				{ "level": "7", "full_description": "", "brief_description": ""}
+			]
+		}
+	],
+	"categories": [
+		{
+			"name": "Strategy and Architecture",
+			"id": "STAR"
+		},
+		{
+			"name": "Change and Transformation",
+			"id": "CHTR"
+		},
+		{
+			"name": "Development and Implementation",
+			"id": "DEIM"
+		},
+		{
+			"name": "Relationships and Engagement",
+			"id": "REEN"
+		},
+		{
+			"name": "Delivery and Operation",
+			"id": "DEOP"
+		},
+		{
+			"name": "People and Skills",
+			"id": "PESK"
+		}
+	],
+	"levels": [
+		{ "level": 1, "level_desc": "Follow"},
+		{ "level": 2, "level_desc": "Assist"},
+		{ "level": 3, "level_desc": "Apply"},
+		{ "level": 4, "level_desc": "Enable"},
+		{ "level": 5, "level_desc": "Ensure & Advise"},
+		{ "level": 6, "level_desc": "Initiate & Influence"},
+		{ "level": 7, "level_desc": "Inspire & Mobilise"}
+
+	]
+}

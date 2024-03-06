@@ -1,0 +1,183 @@
+{
+	"roles": [
+		{
+			"name": "Solutions Architecture",
+			"individual_contributor": {
+				"levels": [
+					{
+						"level": 1,
+						"title": "Associate Solutions Architect",
+						"competencies": [
+						{"STPL": 1}, {"SEPR": 1}, {"GORC": 1}, {"ADGU": 1},
+						{"CHIM": 1}, {"CHAN": 1}, {"CHPL": 1},
+						{"SYDE": 1}, {"DAAN": 1}, {"USEX": 1}, {"COMA": 1}, {"COSC": 1},
+						{"STMA": 1}, {"SAMA": 1},
+						{"TEMA": 1}, {"SEMA": 1}, {"SESE": 1},
+						{"PEMA": 1}, {"SKMA": 1}
+						]
+					},
+					{
+						"level": 2,
+						"title": "Solutions Architect",
+						"competencies": [
+							{"STPL": 2}, {"SEPR": 2}, {"GORC": 2}, {"ADGU": 2},
+							{"CHIM": 2}, {"CHAN": 2}, {"CHPL": 2},
+							{"SYDE": 2}, {"DAAN": 2}, {"USEX": 2}, {"COMA": 2}, {"COSC": 2},
+							{"STMA": 2}, {"SAMA": 2},
+							{"TEMA": 2}, {"SEMA": 2}, {"SESE": 2},
+							{"PEMA": 2}, {"SKMA": 2}
+							]
+						},
+					{
+						"level": 3,
+						"title": "Senior Solutions Architect",
+						"competencies": [
+							{"STPL": 3}, {"SEPR": 3}, {"GORC": 3}, {"ADGU": 3},
+							{"CHIM": 3}, {"CHAN": 3}, {"CHPL": 3},
+							{"SYDE": 3}, {"DAAN": 3}, {"USEX": 3}, {"COMA": 3}, {"COSC": 3},
+							{"STMA": 3}, {"SAMA": 3},
+							{"TEMA": 3}, {"SEMA": 3}, {"SESE": 3},
+							{"PEMA": 3}, {"SKMA": 3}
+							]
+						},
+					{
+						"level": 4,
+						"title": "Principal Solutions Architect",
+						"competencies": [
+							{"STPL": 4}, {"SEPR": 4}, {"GORC": 4}, {"ADGU": 4},
+							{"CHIM": 4}, {"CHAN": 4}, {"CHPL": 4},
+							{"SYDE": 4}, {"DAAN": 4}, {"USEX": 4}, {"COMA": 4}, {"COSC": 4},
+							{"STMA": 4}, {"SAMA": 4},
+							{"TEMA": 4}, {"SEMA": 4}, {"SESE": 4},
+							{"PEMA": 4}, {"SKMA": 4}
+							]
+						},
+					{
+						"level": 5,
+						"title": "Distinguished Solution Architect",
+						"competencies": [
+							{"STPL": 5}, {"SEPR": 5}, {"GORC": 5}, {"ADGU": 5},
+							{"CHIM": 5}, {"CHAN": 5}, {"CHPL": 5},
+							{"SYDE": 5}, {"DAAN": 5}, {"USEX": 5}, {"COMA": 5}, {"COSC": 5},
+							{"STMA": 5}, {"SAMA": 5},
+							{"TEMA": 5}, {"SEMA": 5}, {"SESE": 5},
+							{"PEMA": 5}, {"SKMA": 5}
+							]
+						},
+					{
+						"level": 6,
+						"title": "Director of Architecture and Engineering",
+						"competencies": [
+							{"STPL": 6}, {"SEPR": 6}, {"GORC": 6}, {"ADGU": 6},
+							{"CHIM": 6}, {"CHAN": 6}, {"CHPL": 6},
+							{"SYDE": 6}, {"DAAN": 6}, {"USEX": 6}, {"COMA": 6}, {"COSC": 6},
+							{"STMA": 6}, {"SAMA": 6},
+							{"TEMA": 6}, {"SEMA": 6}, {"SESE": 6},
+							{"PEMA": 6}, {"SKMA": 6}
+							]
+						},
+					{
+						"level": 7,
+						"title": "Chief Technical Officer",
+						"competencies": [
+							{"STPL": 7}, {"SEPR": 7}, {"GORC": 7}, {"ADGU": 7},
+							{"CHIM": 7}, {"CHAN": 7}, {"CHPL": 7},
+							{"SYDE": 7}, {"DAAN": 7}, {"USEX": 7}, {"COMA": 7}, {"COSC": 7},
+							{"STMA": 7}, {"SAMA": 7},
+							{"TEMA": 7}, {"SEMA": 7}, {"SESE": 7},
+							{"PEMA": 7}, {"SKMA": 7}
+							]
+						}
+				]
+			},
+			"line_manager": {
+				"levels": [
+					{
+						"level": 1,
+						"title": "Associate Solutions Architect",
+						"competencies": [
+							{"STPL": 1}, {"SEPR": 1}, {"GORC": 1}, {"ADGU": 1},
+							{"CHIM": 1}, {"CHAN": 1}, {"CHPL": 1},
+							{"SYDE": 1}, {"DAAN": 1}, {"USEX": 1}, {"COMA": 1}, {"COSC": 1},
+							{"STMA": 1}, {"SAMA": 1},
+							{"TEMA": 1}, {"SEMA": 1}, {"SESE": 1},
+							{"PEMA": 1}, {"SKMA": 1}
+							]
+						},
+					{
+						"level": 2,
+						"title": "Solutions Architect",
+						"competencies": [
+							{"STPL": 2}, {"SEPR": 2}, {"GORC": 2}, {"ADGU": 2},
+							{"CHIM": 2}, {"CHAN": 2}, {"CHPL": 2},
+							{"SYDE": 2}, {"DAAN": 2}, {"USEX": 2}, {"COMA": 2}, {"COSC": 2},
+							{"STMA": 2}, {"SAMA": 2},
+							{"TEMA": 2}, {"SEMA": 2}, {"SESE": 2},
+							{"PEMA": 2}, {"SKMA": 2}
+							]
+						},
+					{
+						"level": 3,
+						"title": "Senior Solutions Architect",
+						"competencies": [
+							{"STPL": 3}, {"SEPR": 3}, {"GORC": 3}, {"ADGU": 3},
+							{"CHIM": 3}, {"CHAN": 3}, {"CHPL": 3},
+							{"SYDE": 3}, {"DAAN": 3}, {"USEX": 3}, {"COMA": 3}, {"COSC": 3},
+							{"STMA": 3}, {"SAMA": 3},
+							{"TEMA": 3}, {"SEMA": 3}, {"SESE": 3},
+							{"PEMA": 3}, {"SKMA": 3}
+							]
+						},
+					{
+						"level": 4,
+						"title": "Principal Solutions Architect",
+						"competencies": [
+							{"STPL": 4}, {"SEPR": 4}, {"GORC": 4}, {"ADGU": 4},
+							{"CHIM": 4}, {"CHAN": 4}, {"CHPL": 4},
+							{"SYDE": 4}, {"DAAN": 4}, {"USEX": 4}, {"COMA": 4}, {"COSC": 4},
+							{"STMA": 4}, {"SAMA": 4},
+							{"TEMA": 4}, {"SEMA": 4}, {"SESE": 4},
+							{"PEMA": 4}, {"SKMA": 4}
+							]
+						},
+					{
+						"level": 5,
+						"title": "Head of Solutions Architecture",
+						"competencies": [
+							{"STPL": 5}, {"SEPR": 5}, {"GORC": 5}, {"ADGU": 5},
+							{"CHIM": 5}, {"CHAN": 5}, {"CHPL": 5},
+							{"SYDE": 5}, {"DAAN": 5}, {"USEX": 5}, {"COMA": 5}, {"COSC": 5},
+							{"STMA": 5}, {"SAMA": 5},
+							{"TEMA": 5}, {"SEMA": 5}, {"SESE": 5},
+							{"PEMA": 5}, {"SKMA": 5}
+							]
+						},
+					{
+						"level": 6,
+						"title": "Director of Architecture and Engineering",
+						"competencies": [
+							{"STPL": 6}, {"SEPR": 6}, {"GORC": 6}, {"ADGU": 6},
+							{"CHIM": 6}, {"CHAN": 6}, {"CHPL": 6},
+							{"SYDE": 6}, {"DAAN": 6}, {"USEX": 6}, {"COMA": 6}, {"COSC": 6},
+							{"STMA": 6}, {"SAMA": 6},
+							{"TEMA": 6}, {"SEMA": 6}, {"SESE": 6},
+							{"PEMA": 6}, {"SKMA": 6}
+							]
+						},
+					{
+						"level": 7,
+						"title": "Chief Technical Officer",
+						"competencies": [
+							{"STPL": 7}, {"SEPR": 7}, {"GORC": 7}, {"ADGU": 7},
+							{"CHIM": 7}, {"CHAN": 7}, {"CHPL": 7},
+							{"SYDE": 7}, {"DAAN": 7}, {"USEX": 7}, {"COMA": 7}, {"COSC": 7},
+							{"STMA": 7}, {"SAMA": 7},
+							{"TEMA": 7}, {"SEMA": 7}, {"SESE": 7},
+							{"PEMA": 7}, {"SKMA": 7}
+							]
+						}
+				]
+			}
+		}
+	]
+}

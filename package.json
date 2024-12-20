@@ -6,7 +6,7 @@
   "scripts": {
     "skills": "node -e 'require(\"./index.js\").readSkills(true)'",
     "roles": "node -e 'require(\"./index.js\").readRoles(null, true)'",
-	"doBoth": "node -e 'require(\"./index.js\").doBoth()'",
+    "doBoth": "node -e 'require(\"./index.js\").doBoth()'",
     "start": "nodemon --inspect index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +22,10 @@
   "homepage": "https://github.com/cpburrell/careers#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
     "fs": "^0.0.1-security",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "tableify": "^1.1.1"
   }
 }

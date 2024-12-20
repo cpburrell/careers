@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Role Detail - <%= role[pathway.id]["4"].title %></title>
+</head>
+
+<body>
+	<h1>Role Detail - <%= role[pathway.id][levelId].title %></h1>
+	<h2>
+		<%= role.name %> - <%= pathway.description %> - Level <%= levelId %>
+	</h2>
+	<h3>Competencies</h3>
+
+	<% let level = role[pathway.id][levelId] %>
+
+	<ul>
+		<% skills.categories.forEach(category=> { %>
+			<li>
+				<h4><%= category.name %> (<%= category.id %>)</h4>
+						<ul>
+							<% skills.skills.filter(skill=> skill.category_id === category.id).forEach(skill => { %>
+								<li>
+									<%= skill.id %> - <%= skill.name %>
+										<% let competencyLevel=level[skill.id] %>
+										<% let skillLevel=skills.levels.find(l=> l.level == competencyLevel) %>
+										<br>
+										</bre>Competency Level: <%= competencyLevel %>, <i>"<%= skillLevel.level_name %>"</i>
+										<ul>
+											<%let lev = skill.levels.find(l => l.level == competencyLevel) %>
+											<i><%= lev.full_description %></i>
+										</ul>
+								</li>
+								<% }); %>
+						</ul>
+			</li>
+			<% }); %>
+	</ul>
+
+	<a href="/roles">Back to Roles</a>
+</body>
+
+</html>

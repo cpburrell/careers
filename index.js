@@ -12,10 +12,55 @@ const result = dotenv.config();
 var roles = {};
 var skills = {};
 
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+	res.send('Hello World!');
+});
+
+app.get('/skills', (req, res) => {
+		res.render('skills', { skills: skills.skills, roles: roles });
+});
+
+app.get('/roles', (req, res) => {
+	res.render('roles', { roles: roles, skills: skills });
+});
+
+// New endpoint for role details
+app.get('/role/:roleId/pathway/:pathwayId/level/:levelId', (req, res) => {
+	const { roleId, pathwayId, levelId } = req.params;
+
+	const role = roles.roles.find(r => r.id === roleId);
+	if (!role) {
+		return res.status(404).send('Role not found');
+	}
+
+	const pathway = roles.pathways.find(p => p.id === pathwayId);
+	if (!pathway) {
+		return res.status(404).send('Pathway not found');
+	}
+
+	const level = role[pathwayId][levelId];
+	if (!level) {
+		return res.status(404).send('Level not found');
+	}
+
+	res.render('roleDetail', { skills: skills, role: role, pathway: pathway, levelId: levelId });
+
+	readSkills();
+	readRoles();
+});
+
+app.listen(port, () => {
+	console.log(`Server is running on http://localhost:${port}`);
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-console.log('Running...');
 
 function readSkills(print = false) {
 
@@ -54,7 +99,7 @@ function readSkills(print = false) {
 	return skillsPromise;
 }
 
-function readRoles(skills, print = false) {
+function readRoles(print = false) {
 
 	const rolesPromise = new Promise((resolve, reject) => {
 		fs.readFile('./roles.json', (err, data) => {
@@ -80,14 +125,11 @@ function readRoles(skills, print = false) {
 						role.line_manager.levels.forEach(level => {
 							console.log("\t" + level.level + ": " + level.title);
 						});
-			
-		//					skill.levels.forEach(level => {
-		//						console.log("\t\t" + level.level + ": " + level.level_desc);
-		//					});
+
 					});
 				}
 
-				resolve({"skills": skills, "roles": roles});
+				resolve(roles);
 			}
 	
 		});
@@ -98,66 +140,6 @@ function readRoles(skills, print = false) {
 
 }
 
-function doBoth() {
-
-	
-	readSkills()
-	.then(skills => {
-
-		console.log("Skill Categories:")
-		skills.categories.forEach(category => {
-			console.log(category.id + ": " + category.name);
-
-		});
-
-		readRoles(skills).then(({skills, roles}) => {
-
-			roles.roles.forEach(role => {
-				console.log(role.name + ": Indivdual Contributor");
-		
-				role.individual_contributor.levels.forEach(level => {
-					console.log("\t" + level.level + ": " + level.title + ":");
-
-					level.competencies.forEach((competency) => {
-						Object.keys(competency).forEach((key) => {
-						
-							var tempSkill = skills.skills.find(sub1 => sub1.id === key)
-							var tempLevel = skills.levels.find(sub2 => sub2.level === competency[key])
-
-							console.log("\t\t" + tempSkill.name + " (" + key + "): " + competency[key] + " (" + tempLevel.level_desc + ")");
-
-						});
-					});
-
-				});
-		
-				console.log(role.name + ": Line Manager");
-		
-				role.line_manager.levels.forEach(level => {
-					console.log("\t" + level.level + ": " + level.title + ":");
-
-					level.competencies.forEach((competency) => {
-						Object.keys(competency).forEach((key) => {
-						
-							var tempSkill = skills.skills.find(sub1 => sub1.id === key)
-							var tempLevel = skills.levels.find(sub2 => sub2.level === competency[key])
-
-							console.log("\t\t" + tempSkill.name + " (" + key + "): " + competency[key] + " (" + tempLevel.level_desc + ")");
-
-						});
-					});
-				});
-			});
-		});
-
-	
-	})
-	.catch(err => {
-
-	});
-
-
-}
 
 function exitHandler(options, exitCode) {
 
@@ -192,12 +174,10 @@ process.on('SIGUSR2', exitHandler.bind(null, {exit:true}));
 //catches uncaught exceptions
 process.on('uncaughtException', exitHandler.bind(null, {exit:true}));
 
+readSkills();
+readRoles();
 
 module.exports = {
-	readSkills
-,
-	readRoles,
-	doBoth
+	readSkills,
+	readRoles
 };
-
-

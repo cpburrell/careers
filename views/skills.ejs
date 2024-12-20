@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skills</title>
+</head>
+<body>
+	<h1>Skills</h1>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Level</th>
+		</tr>
+		<% skills.forEach(skill => { %>
+			<tr>
+				<td><%= skill.name %></td>
+				<td><%= skill.level %></td>
+			</tr>
+		<% }); %>
+	</table>
+</body>
+</html>

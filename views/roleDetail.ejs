@@ -2,11 +2,11 @@
 <html>
 
 <head>
-	<title>Role Detail - <%= role[pathway.id]["4"].title %></title>
+	<title>Role Detail - <%= role[pathway.id][levelId].title %></title>
 </head>
 
 <body>
-	<h1>Role Detail - <%= role[pathway.id][levelId].title %></h1>
+	<h1><%= role[pathway.id][levelId].title %> Role Detail</h1>
 	<h2>
 		<%= role.name %> - <%= pathway.description %> - Level <%= levelId %>
 	</h2>
@@ -21,23 +21,23 @@
 						<ul>
 							<% skills.skills.filter(skill=> skill.category_id === category.id).forEach(skill => { %>
 								<li>
-									<%= skill.id %> - <%= skill.name %>
-										<% let competencyLevel=level[skill.id] %>
-										<% let skillLevel=skills.levels.find(l=> l.level == competencyLevel) %>
-										<br>
-										</bre>Competency Level: <%= competencyLevel %>, <i>"<%= skillLevel.level_name %>"</i>
-										<ul>
-											<%let lev = skill.levels.find(l => l.level == competencyLevel) %>
-											<i><%= lev.full_description %></i>
-										</ul>
+									<% let competencyLevel=level[skill.id] %>
+									<% let skillLevel = skill.levels.find(l => l.level == competencyLevel) %>
+									<% let lev = skills.levels.find(l => l.level == competencyLevel) %>
+									<b><%= skill.id %> - <%= skill.name %></b>: Competency Level: <%= competencyLevel %> - <%= lev.level_name %></br>
+									<i><%= skillLevel.brief_description %></i></br></br>
 								</li>
 								<% }); %>
 						</ul>
 			</li>
-			<% }); %>
+		<% }); %>
 	</ul>
 
-	<a href="/roles">Back to Roles</a>
 </body>
+<footer>
+</br>
+<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
+</br>
+</footer>
 
 </html>

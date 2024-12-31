@@ -16,11 +16,12 @@
 			<% roles.pathways.forEach(pathway => { %>
 				<tr>
 					<td>
+						<%= role.name %>:<br>
 						<%= pathway.description %>
 					</td>
 					<% for (let level=1; level <=7; level++) { %>
 						<td>
-							<a href="/role/<%= role.id %>/pathway/<%= pathway.id %>/level/<%= level %>">
+							<a href="/roles/<%= role.id %>/pathway/<%= pathway.id %>/level/<%= level %>">
 								<%= role[pathway.id][level].title %>
 							</a>
 						</td>
@@ -30,4 +31,9 @@
 		<% }); %>
 	</table>
 </body>
+<footer>
+</br>
+<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
+</br>
+</footer>
 </html>

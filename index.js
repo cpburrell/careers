@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/skills', (req, res) => {
-		res.render('skills', { skills: skills.skills, roles: roles });
+		res.render('skills', { skills: skills, roles: roles });
 });
 
 app.get('/roles', (req, res) => {
@@ -31,7 +31,7 @@ app.get('/roles', (req, res) => {
 });
 
 // New endpoint for role details
-app.get('/role/:roleId/pathway/:pathwayId/level/:levelId', (req, res) => {
+app.get('/roles/:roleId/pathway/:pathwayId/level/:levelId', (req, res) => {
 	const { roleId, pathwayId, levelId } = req.params;
 
 	const role = roles.roles.find(r => r.id === roleId);
@@ -54,6 +54,44 @@ app.get('/role/:roleId/pathway/:pathwayId/level/:levelId', (req, res) => {
 	readSkills();
 	readRoles();
 });
+
+// New endpoint for skill details
+app.get('/skills/:skillId/', (req, res) => {
+	const { skillId } = req.params;
+
+	const skill = skills.skills.find(s => s.id == skillId);
+	if (!skill) {
+		return res.status(404).send('Skill not found');
+	}
+
+	res.render('skillDetail', { skills: skills, skillId: skillId });
+
+	readSkills();
+	readRoles();
+});
+
+
+
+// New endpoint for skill level details
+app.get('/skills/:skillId/level/:levelId', (req, res) => {
+	const { skillId, levelId } = req.params;
+
+	const skill = skills.skills.find(s => s.id == skillId);
+	if (!skill) {
+		return res.status(404).send('Skill not found');
+	}
+
+	const level = skill.levels.find(l => l.level == levelId);
+	if (!level) {
+		return res.status(404).send('Level not found');
+	}
+
+	res.render('skillLevelDetail', { skills: skills, skillId: skillId, levelId: levelId });
+
+	readSkills();
+	readRoles();
+});
+
 
 app.listen(port, () => {
 	console.log(`Server is running on http://localhost:${port}`);

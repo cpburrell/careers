@@ -8,14 +8,33 @@
 	<table border="1">
 		<tr>
 			<th>Name</th>
-			<th>Level</th>
+			<% skills.levels.forEach(level=> { %>
+				<th>Level <%= level.level %> </th>
+			<% } ) %>
 		</tr>
-		<% skills.forEach(skill => { %>
+		<% skills.skills.forEach(skill => { %>
 			<tr>
-				<td><%= skill.name %></td>
-				<td><%= skill.level %></td>
-			</tr>
+				<td>
+					<a href="/skills/<%= skill.id %>/ %>">
+						<%= skill.name %>
+					</a>
+				</td>
+				<% skills.levels.forEach(level=> { %>
+					<td>
+						<a href="/skills/<%= skill.id %>/level/<%= level.level %>">
+							<%= level.level_name %> </td>
+						</a>
+				<% } ) %>
+				</tr>
 		<% }); %>
 	</table>
+
+
+
 </body>
+<footer>
+	</br>
+	<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
+	</br>
+</footer>
 </html>

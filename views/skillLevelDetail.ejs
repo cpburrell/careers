@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<% let skill = skills.skills.find(s => s.id == skillId) %>
+<% let level = skill.levels.find(l => l.level == levelId) %>
+
+<head>
+	<title>Skill Detail - <%= skill.name %> - Level <%= levelId %></title>
+</head>
+
+<body>
+	<h1><%= skill.name %> Skill Detail - Level <%= levelId %></h1>
+
+	<h3>Full Description</h3>
+
+	<i><%= level.full_description %></i></br></br>
+
+
+</body>
+<footer>
+</br>
+<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
+</br>
+</footer>
+
+</html>

@@ -5,12 +5,18 @@
  */
 // config variables
 var dotenv = require('dotenv');
+const result = dotenv.config();
+
+
 var fs = require('fs');
 
-const result = dotenv.config();
+const csv=require('csvtojson')
+const json2html = require('node-json2html');
+
 
 var roles = {};
 var skills = {};
+var sfiaCSV = {};
 
 const express = require('express');
 const app = express();
@@ -92,6 +98,92 @@ app.get('/skills/:skillId/level/:levelId', (req, res) => {
 	readRoles();
 });
 
+app.get('/sfia/', (req, res) => {
+	let template_table_header = {
+		"<>": "tr", "html": [
+			{"<>": "th", "html": "ID"},
+			{"<>": "th", "html": "Category"},
+			{"<>": "th", "html": "Subcategory"},
+			{"<>": "th", "html": "Code"},
+			{"<>": "th", "html": "Skill"},
+			{"<>": "th", "html": "Level 1"},
+			{"<>": "th", "html": "Level 2"},
+			{"<>": "th", "html": "Level 3"},
+			{"<>": "th", "html": "Level 4"},
+			{"<>": "th", "html": "Level 5"},
+			{"<>": "th", "html": "Level 6"},
+			{"<>": "th", "html": "Level 7"}
+		]
+	}
+
+	let template_table_body = {
+		"<>": "tr", "html": [
+			{"<>": "td", "html": "${ID}"},
+			{"<>": "td", "html": "${Category}"},
+			{"<>": "td", "html": "${Subcategory}"},
+			{"<>": "td", "html": "${Code}"},
+			{"<>": "td", "html": "${Skill}"},
+			{"<>": "td", "html": "<a href='sfia/${Code}/level/1'>${Level 1}</a>"},
+			{"<>": "td", "html": "<a href='sfia/${Code}/level/2'>${Level 2}</a>"},
+			{"<>": "td", "html": "<a href='sfia/${Code}/level/3'>${Level 3}</a>"},
+			{"<>": "td", "html": "<a href='sfia/${Code}/level/4'>${Level 4}</a>"},
+			{"<>": "td", "html": "<a href='sfia/${Code}/level/5'>${Level 5}</a>"},
+			{"<>": "td", "html": "<a href='sfia/${Code}/level/6'>${Level 6}</a>"},
+			{"<>": "td", "html": "<a href='sfia/${Code}/level/7'>${Level 7}</a>"}
+		]
+	}
+
+	let table_header = json2html.render(sfiaCSV[0], template_table_header);
+	let table_body = json2html.render(sfiaCSV, template_table_body);
+
+	let header = '<!DOCTYPE html>' + '<html lang="en">\n' + '<head><title>Lighthouse Report</title></head>'
+	let body = '<h1>My Report</h1><br><table id="my_table">\n<thead>' + table_header + '\n</thead>\n<tbody>\n' + table_body + '\n</tbody>\n</table>'
+	body = '<body>' + body + '</body>'
+
+	let html = header + body + '</html>';
+
+	res.send(html);
+});
+
+app.get('/sfia/:code/level/:levelId', (req, res) => {
+	const { code, levelId } = req.params;
+
+	let template_table_header = {
+		"<>": "tr", "html": [
+			{"<>": "th", "html": "ID"},
+			{"<>": "th", "html": "Category"},
+			{"<>": "th", "html": "Subcategory"},
+			{"<>": "th", "html": "Code"},
+			{"<>": "th", "html": "Skill"},
+			{"<>": "th", "html": "Level"},
+			{"<>": "th", "html": "Description"}
+		]
+	}
+
+	let template_table_body = {
+		"<>": "tr", "html": [
+			{"<>": "td", "html": "${ID}"},
+			{"<>": "td", "html": "${Category}"},
+			{"<>": "td", "html": "${Subcategory}"},
+			{"<>": "td", "html": "${Code}"},
+			{"<>": "td", "html": "${Skill}"},
+			{"<>": "td", "html": "${Level " + levelId + "}"},
+			{"<>": "td", "html": "${Level " + levelId + " description}"},
+		]
+	}
+
+	let table_header = json2html.render(sfiaCSV[0], template_table_header);
+	let  sfia = sfiaCSV.find(s => { return s.Code == code; });
+	let table_body = json2html.render(sfia, template_table_body);
+
+	let header = '<!DOCTYPE html>' + '<html lang="en">\n' + '<head><title>Lighthouse Report</title></head>'
+	let body = '<h1>SFIA 8 Skills and Levels</h1><br><table id="skills_table">\n<thead>' + table_header + '\n</thead>\n<tbody>\n' + table_body + '\n</tbody>\n</table>'
+	body = '<body>' + body + '</body>'
+
+	let html = header + body + '</html>';
+
+	res.send(html);
+});
 
 app.listen(port, () => {
 	console.log(`Server is running on http://localhost:${port}`);
@@ -178,6 +270,30 @@ function readRoles(print = false) {
 
 }
 
+function readSFIACSV(print = false) {
+
+	const sfiacsvPromise = new Promise((resolve, reject) => {
+
+		csv()
+		.fromFile('./sfia-8_en_220221.xlsx - Skills.csv')
+		.then((jsonObj)=>{
+			sfiaCSV = jsonObj;
+
+			if(print) {
+				console.log(sfiaCSV);
+			}
+
+			resolve(sfiaCSV);
+		})
+		.error((err)=>{
+			console.log(err);
+			reject(err);
+		})
+
+	});
+
+	return sfiacsvPromise;
+}
 
 function exitHandler(options, exitCode) {
 
@@ -214,6 +330,7 @@ process.on('uncaughtException', exitHandler.bind(null, {exit:true}));
 
 readSkills();
 readRoles();
+readSFIACSV();
 
 module.exports = {
 	readSkills,

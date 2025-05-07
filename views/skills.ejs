@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skills</title>
+</head>
+<body>
+	<h1>Skills</h1>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<% skills.levels.forEach(level=> { %>
+				<th>Level <%= level.level %> </th>
+			<% } ) %>
+		</tr>
+		<% skills.skills.forEach(skill => { %>
+			<tr>
+				<td>
+					<a href="/skills/<%= skill.id %>/ %>">
+						<%= skill.name %>
+					</a>
+				</td>
+				<% skills.levels.forEach(level=> { %>
+					<td>
+						<a href="/skills/<%= skill.id %>/level/<%= level.level %>">
+							<%= level.level_name %> </td>
+						</a>
+				<% } ) %>
+				</tr>
+		<% }); %>
+	</table>
+
+
+
+</body>
+<footer>
+	</br>
+	<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
+	</br>
+</footer>
+</html>

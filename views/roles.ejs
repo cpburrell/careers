@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roles</title>
+</head>
+<body>
+	<h1>Roles</h1>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<% for (let level=1; level <=7; level++) { %>
+				<th>Level <%= level %> Title</th>
+			<% } %>
+		</tr>
+		<% roles.roles.forEach(role => { %>
+			<% roles.pathways.forEach(pathway => { %>
+				<tr>
+					<td>
+						<%= role.name %>:<br>
+						<%= pathway.description %>
+					</td>
+					<% for (let level=1; level <=7; level++) { %>
+						<td>
+							<a href="/roles/<%= role.id %>/pathway/<%= pathway.id %>/level/<%= level %>">
+								<%= role[pathway.id][level].title %>
+							</a>
+						</td>
+					<% } %>
+				</tr>
+			<% }); %>
+		<% }); %>
+	</table>
+</body>
+<footer>
+</br>
+<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
+</br>
+</footer>
+</html>

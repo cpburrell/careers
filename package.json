@@ -1,0 +1,33 @@
+{
+  "name": "careers",
+  "version": "1.0.0",
+  "description": "An application to process and display career ladders and options, based on the SFIA framework",
+  "main": "index.js",
+  "scripts": {
+    "skills": "node -e 'require(\"./index.js\").readSkills(true)'",
+    "roles": "node -e 'require(\"./index.js\").readRoles(null, true)'",
+    "doBoth": "node -e 'require(\"./index.js\").doBoth()'",
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpburrell/careers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpburrell/careers/issues"
+  },
+  "homepage": "https://github.com/cpburrell/careers#readme",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "node-json2html": "^3.2.2",
+    "nodemon": "^3.1.0",
+    "tableify": "^1.1.1"
+  }
+}

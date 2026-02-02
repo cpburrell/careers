@@ -14,213 +14,637 @@
 			"id": "sa",
 			"name": "Solution Architecture",
 			"ic": {
-				"selected_skills": [
-					"ARCH",
-					"STPL",
-					"CNSL",
-					"RLMT",
-					"REQM",
-					"UNAN",
-					"DESN",
-					"SWDN",
-					"PROG",
-					"SCTY"
-				],
 				"1": {
 					"title": "Associate Solution Architect",
-					"ARCH": 1,
-					"STPL": 1,
-					"CNSL": 1,
-					"RLMT": 1,
-					"REQM": 1,
-					"UNAN": 1,
-					"DESN": 1,
-					"SWDN": 1,
-					"PROG": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 1
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 1
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Solution Architect",
-					"ARCH": 2,
-					"STPL": 2,
-					"CNSL": 1,
-					"RLMT": 1,
-					"REQM": 1,
-					"UNAN": 1,
-					"DESN": 1,
-					"SWDN": 1,
-					"PROG": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 2
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 1
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Solution Architect",
-					"ARCH": 3,
-					"STPL": 3,
-					"CNSL": 2,
-					"RLMT": 2,
-					"REQM": 2,
-					"UNAN": 2,
-					"DESN": 2,
-					"SWDN": 2,
-					"PROG": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 3
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 2
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 2
+						}
+					]
 				},
 				"4": {
 					"title": "Principal Solution Architect",
-					"ARCH": 4,
-					"STPL": 4,
-					"CNSL": 3,
-					"RLMT": 3,
-					"REQM": 3,
-					"UNAN": 3,
-					"DESN": 3,
-					"SWDN": 3,
-					"PROG": 2,
-					"SCTY": 2
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 4
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 3
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 2
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 3
+						}
+					]
 				},
 				"5": {
 					"title": "Distinguished Solution Architect",
-					"ARCH": 5,
-					"STPL": 5,
-					"CNSL": 4,
-					"RLMT": 4,
-					"REQM": 4,
-					"UNAN": 4,
-					"DESN": 4,
-					"SWDN": 4,
-					"PROG": 3,
-					"SCTY": 3
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 5
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 4
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 3
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 4
+						}
+					]
 				},
 				"6": {
 					"title": "Director of Architecture and Engineering",
-					"ARCH": 6,
-					"STPL": 6,
-					"CNSL": 5,
-					"RLMT": 5,
-					"REQM": 5,
-					"UNAN": 5,
-					"DESN": 5,
-					"SWDN": 5,
-					"PROG": 4,
-					"SCTY": 4
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 6
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 5
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 4
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 6
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 5
+						}
+					]
 				},
 				"7": {
 					"title": "Chief Technical Officer",
-					"ARCH": 7,
-					"STPL": 7,
-					"CNSL": 6,
-					"RLMT": 6,
-					"REQM": 6,
-					"UNAN": 6,
-					"DESN": 6,
-					"SWDN": 6,
-					"PROG": 5,
-					"SCTY": 5
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 7
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 6
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 6
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 6
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 5
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 7
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 6
+						}
+					]
 				}
 			},
 			"lm": {
-				"selected_skills": [
-					"ARCH",
-					"STPL",
-					"CNSL",
-					"RLMT",
-					"REQM",
-					"UNAN",
-					"DESN",
-					"SWDN",
-					"PROG",
-					"SCTY"
-				],
 				"1": {
 					"title": "Associate Solution Architect",
-					"ARCH": 1,
-					"STPL": 1,
-					"CNSL": 1,
-					"RLMT": 1,
-					"REQM": 1,
-					"UNAN": 1,
-					"DESN": 1,
-					"SWDN": 1,
-					"PROG": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 1
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 1
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Solution Architect",
-					"ARCH": 2,
-					"STPL": 2,
-					"CNSL": 1,
-					"RLMT": 1,
-					"REQM": 1,
-					"UNAN": 1,
-					"DESN": 1,
-					"SWDN": 1,
-					"PROG": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 2
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 1
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Solution Architect",
-					"ARCH": 3,
-					"STPL": 3,
-					"CNSL": 2,
-					"RLMT": 2,
-					"REQM": 2,
-					"UNAN": 2,
-					"DESN": 2,
-					"SWDN": 2,
-					"PROG": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 3
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 2
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 2
+						}
+					]
 				},
 				"4": {
 					"title": "Principal Solution Architect",
-					"ARCH": 4,
-					"STPL": 4,
-					"CNSL": 3,
-					"RLMT": 3,
-					"REQM": 3,
-					"UNAN": 3,
-					"DESN": 3,
-					"SWDN": 3,
-					"PROG": 2,
-					"SCTY": 2
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 4
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 3
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 2
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 3
+						}
+					]
 				},
 				"5": {
 					"title": "Head of Solution Architecture",
-					"ARCH": 5,
-					"STPL": 5,
-					"CNSL": 4,
-					"RLMT": 4,
-					"REQM": 4,
-					"UNAN": 4,
-					"DESN": 4,
-					"SWDN": 4,
-					"PROG": 3,
-					"SCTY": 3
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 5
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 4
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 3
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 4
+						}
+					]
 				},
 				"6": {
 					"title": "Director of Architecture and Engineering",
-					"ARCH": 6,
-					"STPL": 6,
-					"CNSL": 5,
-					"RLMT": 5,
-					"REQM": 5,
-					"UNAN": 5,
-					"DESN": 5,
-					"SWDN": 5,
-					"PROG": 4,
-					"SCTY": 4
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 6
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 5
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 4
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 6
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 5
+						}
+					]
 				},
 				"7": {
 					"title": "Chief Technical Officer",
-					"ARCH": 7,
-					"STPL": 7,
-					"CNSL": 6,
-					"RLMT": 6,
-					"REQM": 6,
-					"UNAN": 6,
-					"DESN": 6,
-					"SWDN": 6,
-					"PROG": 5,
-					"SCTY": 5
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 7
+						},
+						{
+							"skill_id": "CNSL",
+							"required_level": 6
+						},
+						{
+							"skill_id": "DESN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 6
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 6
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 5
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 7
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 6
+						}
+					]
 				}
 			}
 		},
@@ -228,165 +652,469 @@
 			"id": "ea",
 			"name": "Enterprise Architecture",
 			"ic": {
-				"selected_skills": [
-					"STPL",
-					"ARCH",
-					"GOVN",
-					"IRMG",
-					"SCTY",
-					"POMG",
-					"BURM"
-				],
 				"1": {
 					"title": "Associate Enterprise Architect",
-					"STPL": 1,
-					"ARCH": 1,
-					"GOVN": 1,
-					"IRMG": 1,
-					"SCTY": 1,
-					"POMG": 1,
-					"BURM": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 1
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Enterprise Architect",
-					"STPL": 2,
-					"ARCH": 1,
-					"GOVN": 1,
-					"IRMG": 1,
-					"SCTY": 1,
-					"POMG": 1,
-					"BURM": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 1
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 2
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Enterprise Architect",
-					"STPL": 3,
-					"ARCH": 2,
-					"GOVN": 2,
-					"IRMG": 2,
-					"SCTY": 2,
-					"POMG": 1,
-					"BURM": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 2
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 2
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 3
+						}
+					]
 				},
 				"4": {
 					"title": "Principal Enterprise Architect",
-					"STPL": 4,
-					"ARCH": 3,
-					"GOVN": 3,
-					"IRMG": 3,
-					"SCTY": 3,
-					"POMG": 2,
-					"BURM": 2
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 3
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 3
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 4
+						}
+					]
 				},
 				"5": {
 					"title": "Distinguished Enterprise Architect",
-					"STPL": 5,
-					"ARCH": 4,
-					"GOVN": 4,
-					"IRMG": 4,
-					"SCTY": 4,
-					"POMG": 3,
-					"BURM": 3
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 4
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 4
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 5
+						}
+					]
 				},
 				"6": {
 					"title": "Director of Architecture and Engineering",
-					"STPL": 6,
-					"ARCH": 5,
-					"GOVN": 5,
-					"IRMG": 5,
-					"SCTY": 5,
-					"POMG": 4,
-					"BURM": 4
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 5
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 5
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 6
+						}
+					]
 				},
 				"7": {
 					"title": "Chief Technical Officer",
-					"STPL": 7,
-					"ARCH": 6,
-					"GOVN": 6,
-					"IRMG": 6,
-					"SCTY": 6,
-					"POMG": 5,
-					"BURM": 5
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 6
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 6
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 6
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 7
+						}
+					]
 				}
 			},
 			"lm": {
-				"selected_skills": [
-					"STPL",
-					"ARCH",
-					"GOVN",
-					"IRMG",
-					"SCTY",
-					"POMG",
-					"BURM"
-				],
 				"1": {
 					"title": "Associate Enterprise Architect",
-					"STPL": 1,
-					"ARCH": 1,
-					"GOVN": 1,
-					"IRMG": 1,
-					"SCTY": 1,
-					"POMG": 1,
-					"BURM": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 1
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Enterprise Architect",
-					"STPL": 2,
-					"ARCH": 1,
-					"GOVN": 1,
-					"IRMG": 1,
-					"SCTY": 1,
-					"POMG": 1,
-					"BURM": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 1
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 2
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Enterprise Architect",
-					"STPL": 3,
-					"ARCH": 2,
-					"GOVN": 2,
-					"IRMG": 2,
-					"SCTY": 2,
-					"POMG": 1,
-					"BURM": 1
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 2
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 2
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 3
+						}
+					]
 				},
 				"4": {
 					"title": "Principal Enterprise Architect",
-					"STPL": 4,
-					"ARCH": 3,
-					"GOVN": 3,
-					"IRMG": 3,
-					"SCTY": 3,
-					"POMG": 2,
-					"BURM": 2
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 3
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 3
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 4
+						}
+					]
 				},
 				"5": {
 					"title": "Head of Enterprise Architecture",
-					"STPL": 5,
-					"ARCH": 4,
-					"GOVN": 4,
-					"IRMG": 4,
-					"SCTY": 4,
-					"POMG": 3,
-					"BURM": 3
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 4
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 4
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 5
+						}
+					]
 				},
 				"6": {
 					"title": "Director of Architecture and Engineering",
-					"STPL": 6,
-					"ARCH": 5,
-					"GOVN": 5,
-					"IRMG": 5,
-					"SCTY": 5,
-					"POMG": 4,
-					"BURM": 4
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 5
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 5
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 6
+						}
+					]
 				},
 				"7": {
 					"title": "Chief Technical Officer",
-					"STPL": 7,
-					"ARCH": 6,
-					"GOVN": 6,
-					"IRMG": 6,
-					"SCTY": 6,
-					"POMG": 5,
-					"BURM": 5
+					"selected_skills": [
+						{
+							"skill_id": "ARCH",
+							"required_level": 6
+						},
+						{
+							"skill_id": "BURM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "IRMG",
+							"required_level": 6
+						},
+						{
+							"skill_id": "POMG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 6
+						},
+						{
+							"skill_id": "STPL",
+							"required_level": 7
+						}
+					]
 				}
 			}
 		},
@@ -394,149 +1122,413 @@
 			"id": "se",
 			"name": "Software Engineering",
 			"ic": {
-				"selected_skills": [
-					"PROG",
-					"SWDN",
-					"DESN",
-					"TEST",
-					"REQM",
-					"SCTY"
-				],
 				"1": {
 					"title": "Associate Software Engineer",
-					"PROG": 1,
-					"SWDN": 1,
-					"DESN": 1,
-					"TEST": 1,
-					"REQM": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Software Engineer",
-					"PROG": 2,
-					"SWDN": 2,
-					"DESN": 1,
-					"TEST": 1,
-					"REQM": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 1
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Software Engineer",
-					"PROG": 3,
-					"SWDN": 3,
-					"DESN": 2,
-					"TEST": 2,
-					"REQM": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 2
+						}
+					]
 				},
 				"4": {
 					"title": "Principal Software Engineer",
-					"PROG": 4,
-					"SWDN": 4,
-					"DESN": 3,
-					"TEST": 3,
-					"REQM": 2,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 3
+						}
+					]
 				},
 				"5": {
 					"title": "Distinguished Software Engineer",
-					"PROG": 5,
-					"SWDN": 5,
-					"DESN": 4,
-					"TEST": 4,
-					"REQM": 3,
-					"SCTY": 2
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 4
+						}
+					]
 				},
 				"6": {
 					"title": "Director of Architecture and Engineering",
-					"PROG": 6,
-					"SWDN": 6,
-					"DESN": 5,
-					"TEST": 5,
-					"REQM": 4,
-					"SCTY": 3
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 6
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 5
+						}
+					]
 				},
 				"7": {
 					"title": "Chief Technical Officer",
-					"PROG": 7,
-					"SWDN": 7,
-					"DESN": 6,
-					"TEST": 6,
-					"REQM": 5,
-					"SCTY": 4
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 7
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 7
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 6
+						}
+					]
 				}
 			},
 			"lm": {
-				"selected_skills": [
-					"PROG",
-					"SWDN",
-					"DESN",
-					"TEST",
-					"REQM",
-					"SCTY"
-				],
 				"1": {
 					"title": "Associate Software Engineer",
-					"PROG": 1,
-					"SWDN": 1,
-					"DESN": 1,
-					"TEST": 1,
-					"REQM": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Software Engineer",
-					"PROG": 2,
-					"SWDN": 2,
-					"DESN": 1,
-					"TEST": 1,
-					"REQM": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 2
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 1
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Software Engineer",
-					"PROG": 3,
-					"SWDN": 3,
-					"DESN": 2,
-					"TEST": 2,
-					"REQM": 1,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 3
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 2
+						}
+					]
 				},
 				"4": {
 					"title": "Principal Software Engineer",
-					"PROG": 4,
-					"SWDN": 4,
-					"DESN": 3,
-					"TEST": 3,
-					"REQM": 2,
-					"SCTY": 1
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 4
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 1
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 3
+						}
+					]
 				},
 				"5": {
 					"title": "Head of Software Engineering",
-					"PROG": 5,
-					"SWDN": 5,
-					"DESN": 4,
-					"TEST": 4,
-					"REQM": 3,
-					"SCTY": 2
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 5
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 2
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 4
+						}
+					]
 				},
 				"6": {
 					"title": "Director of Architecture and Engineering",
-					"PROG": 6,
-					"SWDN": 6,
-					"DESN": 5,
-					"TEST": 5,
-					"REQM": 4,
-					"SCTY": 3
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 6
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 3
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 5
+						}
+					]
 				},
 				"7": {
 					"title": "Chief Technical Officer",
-					"PROG": 7,
-					"SWDN": 7,
-					"DESN": 6,
-					"TEST": 6,
-					"REQM": 5,
-					"SCTY": 4
+					"selected_skills": [
+						{
+							"skill_id": "DESN",
+							"required_level": 6
+						},
+						{
+							"skill_id": "PROG",
+							"required_level": 7
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "SCTY",
+							"required_level": 4
+						},
+						{
+							"skill_id": "SWDN",
+							"required_level": 7
+						},
+						{
+							"skill_id": "TEST",
+							"required_level": 6
+						}
+					]
 				}
 			}
 		},
@@ -544,149 +1536,413 @@
 			"id": "ba",
 			"name": "Business Analyst",
 			"ic": {
-				"selected_skills": [
-					"BUSA",
-					"REQM",
-					"RLMT",
-					"UNAN",
-					"MEAS",
-					"GOVN"
-				],
 				"1": {
 					"title": "Associate Business Analyst",
-					"BUSA": 1,
-					"REQM": 1,
-					"RLMT": 1,
-					"UNAN": 1,
-					"MEAS": 1,
-					"GOVN": 1
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Business Analyst",
-					"BUSA": 2,
-					"REQM": 2,
-					"RLMT": 1,
-					"UNAN": 1,
-					"MEAS": 1,
-					"GOVN": 1
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 2
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Business Analyst",
-					"BUSA": 3,
-					"REQM": 3,
-					"RLMT": 2,
-					"UNAN": 2,
-					"MEAS": 2,
-					"GOVN": 1
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 3
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 2
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 2
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 2
+						}
+					]
 				},
 				"4": {
 					"title": "Lead Business Analyst",
-					"BUSA": 4,
-					"REQM": 4,
-					"RLMT": 3,
-					"UNAN": 3,
-					"MEAS": 3,
-					"GOVN": 2
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 4
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 3
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 3
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 3
+						}
+					]
 				},
 				"5": {
 					"title": "Principal Business Analyst",
-					"BUSA": 5,
-					"REQM": 5,
-					"RLMT": 4,
-					"UNAN": 4,
-					"MEAS": 4,
-					"GOVN": 3
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 5
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 4
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 4
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 4
+						}
+					]
 				},
 				"6": {
 					"title": "Head of Business Analysis",
-					"BUSA": 6,
-					"REQM": 6,
-					"RLMT": 5,
-					"UNAN": 5,
-					"MEAS": 5,
-					"GOVN": 4
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 6
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 5
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 6
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 5
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 5
+						}
+					]
 				},
 				"7": {
 					"title": "Chief Business Analyst",
-					"BUSA": 7,
-					"REQM": 7,
-					"RLMT": 6,
-					"UNAN": 6,
-					"MEAS": 6,
-					"GOVN": 5
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 7
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 6
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 7
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 6
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 6
+						}
+					]
 				}
 			},
 			"lm": {
-				"selected_skills": [
-					"BUSA",
-					"REQM",
-					"RLMT",
-					"UNAN",
-					"MEAS",
-					"GOVN"
-				],
 				"1": {
 					"title": "Associate Business Analyst",
-					"BUSA": 1,
-					"REQM": 1,
-					"RLMT": 1,
-					"UNAN": 1,
-					"MEAS": 1,
-					"GOVN": 1
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 1
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 1
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"2": {
 					"title": "Business Analyst",
-					"BUSA": 2,
-					"REQM": 2,
-					"RLMT": 1,
-					"UNAN": 1,
-					"MEAS": 1,
-					"GOVN": 1
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 2
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 1
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 2
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 1
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 1
+						}
+					]
 				},
 				"3": {
 					"title": "Senior Business Analysit",
-					"BUSA": 3,
-					"REQM": 3,
-					"RLMT": 2,
-					"UNAN": 2,
-					"MEAS": 2,
-					"GOVN": 1
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 3
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 1
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 2
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 3
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 2
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 2
+						}
+					]
 				},
 				"4": {
 					"title": "Principal Business Analyst",
-					"BUSA": 4,
-					"REQM": 4,
-					"RLMT": 3,
-					"UNAN": 3,
-					"MEAS": 3,
-					"GOVN": 2
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 4
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 2
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 3
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 4
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 3
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 3
+						}
+					]
 				},
 				"5": {
 					"title": "Head of Business Analysis",
-					"BUSA": 5,
-					"REQM": 5,
-					"RLMT": 4,
-					"UNAN": 4,
-					"MEAS": 4,
-					"GOVN": 3
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 5
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 3
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 4
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 5
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 4
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 4
+						}
+					]
 				},
 				"6": {
 					"title": "VP of Business Analysis",
-					"BUSA": 6,
-					"REQM": 6,
-					"RLMT": 5,
-					"UNAN": 5,
-					"MEAS": 5,
-					"GOVN": 4
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 6
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 4
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 5
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 6
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 5
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 5
+						}
+					]
 				},
 				"7": {
 					"title": "SVP of Business Analysis",
-					"BUSA": 7,
-					"REQM": 7,
-					"RLMT": 6,
-					"UNAN": 6,
-					"MEAS": 6,
-					"GOVN": 5
+					"selected_skills": [
+						{
+							"skill_id": "BUSA",
+							"required_level": 7
+						},
+						{
+							"skill_id": "GOVN",
+							"required_level": 5
+						},
+						{
+							"skill_id": "MEAS",
+							"required_level": 6
+						},
+						{
+							"skill_id": "REQM",
+							"required_level": 7
+						},
+						{
+							"skill_id": "RLMT",
+							"required_level": 6
+						},
+						{
+							"skill_id": "UNAN",
+							"required_level": 6
+						}
+					]
 				}
 			}
 		}

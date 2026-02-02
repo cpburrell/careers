@@ -61,22 +61,16 @@ CREATE TABLE IF NOT EXISTS role_levels (
 	PRIMARY KEY (role_id, pathway_id, level)
 );
 
-CREATE TABLE IF NOT EXISTS role_level_competencies (
+-- Optional curated selection list (per role+pathway+level) of which SFIA skills are relevant
+DROP TABLE IF EXISTS role_pathway_selected_skills;
+CREATE TABLE IF NOT EXISTS role_level_selected_skills (
 	role_id text NOT NULL,
 	pathway_id text NOT NULL,
-	level int NOT NULL,
+	level int NOT NULL CHECK (level >= 1 AND level <= 7),
 	skill_id text NOT NULL REFERENCES sfia_skill(code),
-	competency_level int NOT NULL CHECK (competency_level >= 1 AND competency_level <= 7),
+	required_level int NOT NULL CHECK (required_level >= 1 AND required_level <= 7),
 	PRIMARY KEY (role_id, pathway_id, level, skill_id),
 	FOREIGN KEY (role_id, pathway_id, level) REFERENCES role_levels(role_id, pathway_id, level) ON DELETE CASCADE
-);
-
--- Optional curated selection list (per role+pathway) of which SFIA skills are relevant
-CREATE TABLE IF NOT EXISTS role_pathway_selected_skills (
-	role_id text NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
-	pathway_id text NOT NULL REFERENCES pathways(id) ON DELETE CASCADE,
-	skill_id text NOT NULL REFERENCES sfia_skill(code),
-	PRIMARY KEY (role_id, pathway_id, skill_id)
 );
 
 -- Grant read access to all tables in the schema (covers both current and future tables)
@@ -123,8 +117,7 @@ SET search_path = careers, public;
 
 -- Truncate all normalized tables in a single statement (required with FK constraints)
 TRUNCATE
-	careers.role_level_competencies,
-	careers.role_pathway_selected_skills,
+	careers.role_level_selected_skills,
 	careers.role_levels,
 	careers.roles,
 	careers.pathways
@@ -169,41 +162,8 @@ FROM levels;
 \echo '  rows: careers.role_levels'
 SELECT count(*) AS role_levels_rows FROM careers.role_levels;
 
--- role_level_competencies
-\echo '  inserting: role_level_competencies'
-WITH roles_doc AS (SELECT doc FROM careers.raw_roles ORDER BY loaded_at DESC LIMIT 1),
-roles AS (SELECT jsonb_array_elements(roles_doc.doc->'roles') AS r FROM roles_doc),
-pathways AS (SELECT jsonb_array_elements(roles_doc.doc->'pathways') AS p FROM roles_doc),
-levels AS (
-	SELECT
-		(r->>'id') AS role_id,
-		(p->>'id') AS pathway_id,
-		(l.key)::int AS level,
-		l.value AS level_obj
-	FROM roles
-	JOIN pathways ON true
-	JOIN LATERAL jsonb_each(COALESCE(r->(p->>'id'), '{}'::jsonb)) AS l(key, value) ON true
-	WHERE l.key ~ '^[0-9]+$'
-),
-competencies AS (
-	SELECT
-		role_id,
-		pathway_id,
-		level,
-		c.key AS skill_id,
-		((c.value)::text)::int AS competency_level
-	FROM levels
-	JOIN LATERAL jsonb_each(level_obj) AS c(key, value) ON true
-	WHERE c.key <> 'title'
-)
-INSERT INTO careers.role_level_competencies (role_id, pathway_id, level, skill_id, competency_level)
-SELECT role_id, pathway_id, level, skill_id, competency_level
-FROM competencies;
-\echo '  rows: careers.role_level_competencies'
-SELECT count(*) AS role_level_competencies_rows FROM careers.role_level_competencies;
-
 -- role_pathway_selected_skills (optional in roles.json)
-\echo '  inserting: role_pathway_selected_skills (optional)'
+\echo '  inserting: role_level_selected_skills (optional)'
 WITH roles_doc AS (SELECT doc FROM careers.raw_roles ORDER BY loaded_at DESC LIMIT 1),
 roles AS (SELECT jsonb_array_elements(roles_doc.doc->'roles') AS r FROM roles_doc),
 pathways AS (SELECT jsonb_array_elements(roles_doc.doc->'pathways') AS p FROM roles_doc),
@@ -211,16 +171,21 @@ sel AS (
 	SELECT
 		(r->>'id') AS role_id,
 		(p->>'id') AS pathway_id,
-		jsonb_array_elements_text(COALESCE(r->(p->>'id')->'selected_skills', '[]'::jsonb)) AS skill_id
+		(l.key)::int AS level,
+		(item->>'skill_id') AS skill_id,
+		(item->>'required_level')::int AS required_level
 	FROM roles
 	JOIN pathways ON true
+	JOIN LATERAL jsonb_each(COALESCE(r->(p->>'id'), '{}'::jsonb)) AS l(key, value) ON true
+	JOIN LATERAL jsonb_array_elements(COALESCE(l.value->'selected_skills', '[]'::jsonb)) AS item ON true
+	WHERE l.key ~ '^[0-9]+$'
 )
-INSERT INTO careers.role_pathway_selected_skills (role_id, pathway_id, skill_id)
-SELECT role_id, pathway_id, skill_id
+INSERT INTO careers.role_level_selected_skills (role_id, pathway_id, level, skill_id, required_level)
+SELECT role_id, pathway_id, level, skill_id, required_level
 FROM sel
-WHERE skill_id <> '';
-\echo '  rows: careers.role_pathway_selected_skills'
-SELECT count(*) AS role_pathway_selected_skills_rows FROM careers.role_pathway_selected_skills;
+WHERE skill_id <> '' AND required_level BETWEEN 1 AND 7;
+\echo '  rows: careers.role_level_selected_skills'
+SELECT count(*) AS role_level_selected_skills_rows FROM careers.role_level_selected_skills;
 
 COMMIT;
 

@@ -19,7 +19,8 @@
 			</p>
 		</section>
 
-	<% let level = role[pathway.id][levelId] %>
+		<% let level = role[pathway.id][levelId] %>
+		<% const skillsById = new Map((skills.skills || []).map(s => [s.id, s])) %>
 
 		<div style="display: flex; flex-direction: column; gap: 12px;">
 			<% skills.categories.forEach(category=> { %>
@@ -30,29 +31,20 @@
 							<div class="badge"><%= category.id %></div>
 						</div>
 
-						<% const selected = role[pathway.id] && role[pathway.id].selected_skills %>
-						<% const selectedSet = Array.isArray(selected) ? new Set(selected) : null %>
-						<% const categorySkills = (skills.skills || []).filter(skill => skill.category_id === category.id) %>
-						<% const visibleSkills = selectedSet ? categorySkills.filter(skill => selectedSet.has(skill.id)) : categorySkills %>
-						<% const competencies = visibleSkills.map(skill => ({ skill, competency: level[skill.id] })).filter(x => x.competency != null).sort((a,b) => (a.skill.name || '').localeCompare(b.skill.name || '')) %>
+						<% const selected = (level && Array.isArray(level.selected_skills)) ? level.selected_skills : [] %>
+						<% const entries = selected.map(e => ({ entry: e, skill: skillsById.get(e.skill_id) })).filter(x => x.skill && x.skill.category_id === category.id) %>
+						<% entries.sort((a,b) => (a.skill.name || '').localeCompare(b.skill.name || '')) %>
 						<div style="margin-top: 8px;">
-							<span class="badge"><%= competencies.length %> skills</span>
-							<% if (selectedSet) { %>
-								<span class="badge">selected</span>
-							<% } %>
+							<span class="badge"><%= entries.length %> skills</span>
 						</div>
 
-						<% if (competencies.length === 0) { %>
+						<% if (entries.length === 0) { %>
 							<div style="color: var(--muted); font-size: 13px;">
-								<% if (selectedSet) { %>
-									No selected skills in this category for this role/pathway.
-								<% } else { %>
-									No competencies set for this category at this level.
-								<% } %>
+								No selected skills in this category for this role/pathway/level.
 							</div>
 						<% } %>
 
-						<% if (competencies.length > 0) { %>
+						<% if (entries.length > 0) { %>
 							<div class="table-wrap" style="margin-top: 10px;">
 								<table style="min-width: 720px;">
 									<thead>
@@ -63,7 +55,8 @@
 										</tr>
 									</thead>
 									<tbody>
-										<% competencies.forEach(({ skill, competency }) => { %>
+										<% entries.forEach(({ skill, entry }) => { %>
+											<% const competency = entry.required_level %>
 											<% let skillLevel = (skill.levels || []).find(l => l.level == competency) %>
 											<% let lev = (skills.levels || []).find(l => l.level == competency) %>
 											<tr>

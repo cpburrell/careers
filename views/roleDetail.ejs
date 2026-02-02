@@ -3,41 +3,61 @@
 
 <head>
 	<title>Role Detail - <%= role[pathway.id][levelId].title %></title>
+	<%- include('_styles') %>
 </head>
 
 <body>
-	<h1><%= role[pathway.id][levelId].title %> Role Detail</h1>
-	<h2>
-		<%= role.name %> - <%= pathway.description %> - Level <%= levelId %>
-	</h2>
-	<h3>Competencies</h3>
+	<div class="page">
+		<%- include('_nav') %>
 
-	<% let level = role[pathway.id][levelId] %>
+		<section class="hero">
+			<h1><%= role[pathway.id][levelId].title %></h1>
+			<p>
+				<span class="badge badge--accent"><%= role.name %></span>
+				<span class="badge"><%= pathway.description %></span>
+				<span class="badge badge--ok">Level <%= levelId %></span>
+			</p>
+		</section>
 
-	<ul>
-		<% skills.categories.forEach(category=> { %>
-			<li>
-				<h4><%= category.name %> (<%= category.id %>)</h4>
-						<ul>
-							<% skills.skills.filter(skill=> skill.category_id === category.id).forEach(skill => { %>
-								<li>
-									<% let competencyLevel=level[skill.id] %>
-									<% let skillLevel = skill.levels.find(l => l.level == competencyLevel) %>
-									<% let lev = skills.levels.find(l => l.level == competencyLevel) %>
-									<b><%= skill.id %> - <%= skill.name %></b>: Competency Level: <%= competencyLevel %> - <%= lev.level_name %></br>
-									<i><%= skillLevel.brief_description %></i></br></br>
-								</li>
-								<% }); %>
-						</ul>
-			</li>
-		<% }); %>
-	</ul>
+		<% let level = role[pathway.id][levelId] %>
 
+		<div class="grid">
+			<% skills.categories.forEach(category=> { %>
+				<section class="card">
+					<div class="card__body">
+						<div class="item-title">
+							<div class="item-title__name"><%= category.name %></div>
+							<div class="badge"><%= category.id %></div>
+						</div>
+
+						<% const categorySkills = (skills.skills || []).filter(skill => skill.category_id === category.id) %>
+						<% const competencies = categorySkills.map(skill => ({ skill, competency: level[skill.id] })).filter(x => x.competency != null) %>
+
+						<% if (competencies.length === 0) { %>
+							<div style="color: var(--muted); font-size: 13px;">No competencies set for this category at this level.</div>
+						<% } %>
+
+						<% competencies.forEach(({ skill, competency }) => { %>
+							<% let skillLevel = (skill.levels || []).find(l => l.level == competency) %>
+							<% let lev = (skills.levels || []).find(l => l.level == competency) %>
+							<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.10);">
+								<div class="item-title">
+									<div class="item-title__name"><%= skill.name %></div>
+									<div class="badge"><%= skill.id %></div>
+									<div class="badge badge--ok">Level <%= competency %><% if (lev) { %> • <%= lev.level_name %><% } %></div>
+								</div>
+								<% if (skillLevel && skillLevel.brief_description) { %>
+									<div style="color: var(--muted); font-size: 13px;"><%= skillLevel.brief_description %></div>
+								<% } %>
+							</div>
+						<% }) %>
+					</div>
+				</section>
+			<% }); %>
+		</div>
+
+		<%- include('_footer') %>
+	</div>
 </body>
-<footer>
-</br>
-<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
-</br>
-</footer>
 
 </html>

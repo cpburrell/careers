@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SFIA - <%= row.Code %> - Level <%= levelId %></title>
+	<%- include('_styles') %>
+</head>
+<body>
+	<div class="page">
+		<%- include('_nav') %>
+
+		<section class="hero">
+			<h1><%= row.Skill %></h1>
+			<p>
+				<span class="badge"><%= row.Code %></span>
+				<span class="badge badge--accent"><%= row.Category %></span>
+				<span class="badge"><%= row.Subcategory %></span>
+				<span class="badge badge--ok">Level <%= levelId %></span>
+			</p>
+		</section>
+
+		<section class="card">
+			<div class="card__body">
+				<div class="item-title">
+					<div class="item-title__name"><%= row['Level ' + levelId] || ('Level ' + levelId) %></div>
+					<a class="badge" href="/sfia/">Back to list</a>
+				</div>
+				<div style="white-space: pre-wrap;"><%= row['Level ' + levelId + ' description'] || '' %></div>
+			</div>
+		</section>
+
+		<%- include('_footer') %>
+	</div>
+</body>
+</html>
+

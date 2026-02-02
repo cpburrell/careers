@@ -5,27 +5,42 @@
 
 <head>
 	<title>Skill Detail - <%= skill.name %></title>
+	<%- include('_styles') %>
 </head>
 
 <body>
-	<h1><%= skill.name %> Skill Detail</h1>
+	<div class="page">
+		<%- include('_nav') %>
 
-	<% skill.levels.forEach(level => { %>
+		<section class="hero">
+			<h1><%= skill.name %></h1>
+			<p>
+				<span class="badge"><%= skill.id %></span>
+				<span class="badge badge--accent"><%= (skills.categories.find(c => c.id === skill.category_id) || {}).name || skill.category_id %></span>
+			</p>
+		</section>
 
-		<h3>
-			<a href="/skills/<%= skill.id %>/level/<%= level.level %>">
-				<%= level.level %> - <%= skills.levels.find(l => l.level == level.level).level_name %></br>
-			</a>
-		</h3>
+		<div class="grid">
+			<% skill.levels.forEach(level => { %>
+				<section class="card">
+					<div class="card__body">
+						<div class="item-title">
+							<a class="item-title__name" href="/skills/<%= skill.id %>/level/<%= level.level %>">
+								Level <%= level.level %> • <%= (skills.levels.find(l => l.level == level.level) || {}).level_name || '' %>
+							</a>
+							<span class="badge badge--ok">View</span>
+						</div>
 
-		<%= level.brief_description %></br></br>
-	<% }) %>
+						<% if (level.brief_description) { %>
+							<div style="color: var(--muted); font-size: 13px;"><%= level.brief_description %></div>
+						<% } %>
+					</div>
+				</section>
+			<% }) %>
+		</div>
 
+		<%- include('_footer') %>
+	</div>
 </body>
-<footer>
-</br>
-<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
-</br>
-</footer>
 
 </html>

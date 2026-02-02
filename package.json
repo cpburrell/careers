@@ -4,9 +4,9 @@
   "description": "An application to process and display career ladders and options, based on the SFIA framework",
   "main": "index.js",
   "scripts": {
-    "skills": "node -e 'require(\"./index.js\").readSkills(true)'",
-    "roles": "node -e 'require(\"./index.js\").readRoles(null, true)'",
-    "doBoth": "node -e 'require(\"./index.js\").doBoth()'",
+    "skills": "node -e 'require(\"./index.js\").readSkills(true).catch(e=>{console.error(e);process.exit(1);})'",
+    "roles": "node -e 'require(\"./index.js\").readRoles(true).catch(e=>{console.error(e);process.exit(1);})'",
+    "doBoth": "node -e 'require(\"./index.js\").doBoth().catch(e=>{console.error(e);process.exit(1);})'",
     "start": "nodemon --inspect index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "ejs": "^3.1.10",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
+    "pg": "^8.12.0",
     "node-json2html": "^3.2.2",
     "nodemon": "^3.1.0",
     "tableify": "^1.1.1"

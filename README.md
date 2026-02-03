@@ -1,37 +1,120 @@
-## Dev
+# Careers (SFIA-based role & skill explorer)
 
-### Run the app
+This project is a small Express + EJS web app for browsing:
+- Roles (e.g. Solution Architecture) by pathway (IC/LM) and level
+- The SFIA skills relevant for a given role/pathway/level, including required level and skill-level descriptions
 
+It supports two data sources:
+- Files (default): reads `roles.json` and the SFIA CSV in this repo
+- Postgres: reads the same data after importing it into a Postgres schema
+
+## Quickstart
+
+### Prerequisites
+- Node.js
+- npm
+
+### Install & run
 - `npm install`
 - `npm start`
 - Open `http://localhost:3000`
 
-### Postgres (dev via Docker)
+## Routes
 
-This repo includes a `docker-compose.yml` for running Postgres locally.
+- `/roles` — role table by pathway and level
+- `/roles/:roleId/pathway/:pathwayId/level/:levelId` — role detail (skill requirements)
+- `/skills` — SFIA skills list
+- `/skills/:skillId/` — skill levels
+- `/skills/:skillId/level/:levelId` — level description
+- `/sfia/` — SFIA CSV browsing
+- `/sfia/:code/level/:levelId` — SFIA skill detail (from CSV)
 
-- Create `.env` from `.env.example` (optional; defaults are provided).
-- Start Postgres: `docker compose up -d postgres`
-- Stop Postgres: `docker compose down`
+## Data model (files)
 
-Persistence:
-- Data is persisted to `./.pgdata/` (a local folder) and will survive restarts and reboots.
-- To delete the data: stop Postgres (`docker compose down`) and remove `./.pgdata/`.
+### Role requirements (`roles.json`)
+For each role, each pathway (`ic`/`lm`) contains levels `1..7`. Each level has:
+- `title` — human-readable title
+- `selected_skills` — list of required skills with required levels:
 
-Initialization:
-- On first container creation (empty `./.pgdata/`), Postgres automatically runs `db/init_dev.sql` and loads the current `roles.json` and SFIA CSV.
-- To re-run initialization, delete `./.pgdata/` and start Postgres again.
+```json
+{
+  "title": "Distinguished Solution Architect",
+  "selected_skills": [
+    { "skill_id": "ARCH", "required_level": 5 },
+    { "skill_id": "STPL", "required_level": 5 }
+  ]
+}
+```
 
-Users:
-- The container runs with an admin user (`POSTGRES_USER`, usually `postgres`).
-- The init process creates/updates an app user (`CAREERS_DB_USER`, default `careers`) with password `CAREERS_DB_PASSWORD`.
+### SFIA skill data
+- Source CSV: `sfia-8_en_220221.xlsx - Skills.csv`
+- SFIA level names/descriptions: `sfia_levels.json`
+- AI overlay for missing level descriptions: `sfia_ai_descriptions.json`
 
-### Switching data sources
+Generate/refresh the AI overlay:
+- `python3 scripts/generate_sfia_ai_descriptions.py`
 
-By default the app reads from local files (`roles.json`, `sfia_levels.json`, and the SFIA CSV).
+## Data source selection
 
-- File mode (default): `CAREERS_DATA_SOURCE=file`
-- Postgres mode: `CAREERS_DATA_SOURCE=db` (requires the dev DB init step above)
+Set `CAREERS_DATA_SOURCE`:
+- `file` (default)
+- `db`
 
-Connection:
-- Set `DATABASE_URL` (recommended) or `PGHOST/PGPORT/PGUSER/PGPASSWORD/PGDATABASE`.
+See `.env.example` for connection variables.
+
+## Postgres (dev via Docker)
+
+This repo includes a `docker-compose.yml` that can run **both** the app and Postgres.
+
+### Start / stop
+- Start app + DB: `docker compose up -d --build`
+- Start DB only: `docker compose up -d postgres`
+- Stop: `docker compose down`
+
+Convenience scripts:
+- `bin/docker-up.sh`
+- `bin/docker-up-debug.sh`
+- `bin/docker-down.sh`
+- `bin/docker-logs.sh`
+- `bin/docker-reset-db.sh`
+
+Make scripts executable once:
+- `chmod +x bin/docker-*.sh`
+
+### VS Code debugging (Docker)
+
+Option A (recommended): debug on-host, DB in Docker
+- Start DB: `docker compose up -d postgres`
+- Use `.vscode/launch.json` → `Launch Program`
+
+Option B: debug the app inside Docker
+- Start app + DB with debugger enabled: `bin/docker-up-debug.sh`
+- In VS Code, use `.vscode/launch.json` → `Attach to Docker (careers-app)`
+- Inspector port is `APP_DEBUG_PORT` (default `9229`)
+
+### Persistence
+- Postgres data is persisted to `./.pgdata/` and survives restarts/reboots.
+- To wipe the DB: stop Postgres and delete `./.pgdata/`.
+
+### Automatic initialization
+When `./.pgdata/` is empty, Postgres runs init scripts automatically:
+- `db/init_roles.sh` creates/updates the app DB role (`CAREERS_DB_USER`)
+- `db/init_dev.sql` imports the SFIA CSV and `roles.json`
+
+To force re-init:
+- `docker compose down`
+- `rm -rf .pgdata`
+- `docker compose up -d postgres`
+
+## Project layout
+
+- `index.js` — app entrypoint (server only starts when run directly)
+- `lib/dataStore.js` — loads data from file or Postgres and builds in-memory indexes
+- `routes/` — Express routers
+- `views/` — EJS templates
+- `db/` — Postgres init scripts
+- `scripts/` — maintenance scripts (e.g. AI overlay generator)
+
+## Notes
+
+- SFIA content may be subject to licensing restrictions. Be cautious before publishing full SFIA descriptions publicly.

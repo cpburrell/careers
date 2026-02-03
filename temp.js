@@ -1,27 +1,27 @@
-const fs = require('fs');
+const dataStore = require('./lib/dataStore');
 
-let data = fs.readFileSync('./skills.json');
-skills = JSON.parse(data);
+(async () => {
+	await dataStore.loadCore({ validate: false });
 
-// Read the temp.json file
-data = fs.readFileSync('./temp.json');
+	const roles = dataStore.getRoles();
+	const skills = dataStore.getSkills();
 
-// Parse the JSON data
-const roles = JSON.parse(data);
+	(roles.roles || []).forEach((role) => {
+		(roles.pathways || []).forEach((pathway) => {
+			console.log(`${role.name} (${role.id}) - ${pathway.description} (${pathway.id})`);
+			const selected = role[pathway.id] && role[pathway.id].selected_skills;
+			console.log(`\tselected_skills: ${(selected || []).length}`);
 
-// Iterate over the roles
-roles.roles.forEach(role => {
-	console.log(`Pathway: ${role.pathway}`);
-
-	for(var index = 1	; index <= 7; index++) {
-		console.log("\tTitle: " + role["ic"][index].title);
-
-		skills.skills.forEach(skill => {
-			console.log("\t\t" + skill["id"] + " ("+ skill["name"]+"): " + role["ic"][index][skill["id"]]);
+			for (let level = 1; level <= 7; level++) {
+				const lvl = role[pathway.id] && role[pathway.id][String(level)];
+				console.log(`\t${level}: ${lvl ? lvl.title : ''}`);
+			}
 		});
+	});
 
-	}
-
+	console.log(`SFIA skills loaded: ${(skills.skills || []).length}`);
+})().catch((err) => {
+	console.error(err);
+	process.exit(1);
 });
-
 

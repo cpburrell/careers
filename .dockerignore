@@ -1,0 +1,9 @@
+node_modules
+.pgdata
+.git
+.env
+.env.*
+npm-debug.log*
+*.pdf
+*.xlsx
+

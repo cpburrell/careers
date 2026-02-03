@@ -20,8 +20,9 @@
 		</section>
 
 		<% let level = role[pathway.id][levelId] %>
+		<% const skillsById = new Map((skills.skills || []).map(s => [s.id, s])) %>
 
-		<div class="grid">
+		<div style="display: flex; flex-direction: column; gap: 12px;">
 			<% skills.categories.forEach(category=> { %>
 				<section class="card">
 					<div class="card__body">
@@ -30,27 +31,67 @@
 							<div class="badge"><%= category.id %></div>
 						</div>
 
-						<% const categorySkills = (skills.skills || []).filter(skill => skill.category_id === category.id) %>
-						<% const competencies = categorySkills.map(skill => ({ skill, competency: level[skill.id] })).filter(x => x.competency != null) %>
+						<% const selected = (level && Array.isArray(level.selected_skills)) ? level.selected_skills : [] %>
+						<% const entries = selected.map(e => ({ entry: e, skill: skillsById.get(e.skill_id) })).filter(x => x.skill && x.skill.category_id === category.id) %>
+						<% entries.sort((a,b) => (a.skill.name || '').localeCompare(b.skill.name || '')) %>
+						<div style="margin-top: 8px;">
+							<span class="badge"><%= entries.length %> skills</span>
+						</div>
 
-						<% if (competencies.length === 0) { %>
-							<div style="color: var(--muted); font-size: 13px;">No competencies set for this category at this level.</div>
+						<% if (entries.length === 0) { %>
+							<div style="color: var(--muted); font-size: 13px;">
+								No selected skills in this category for this role/pathway/level.
+							</div>
 						<% } %>
 
-						<% competencies.forEach(({ skill, competency }) => { %>
-							<% let skillLevel = (skill.levels || []).find(l => l.level == competency) %>
-							<% let lev = (skills.levels || []).find(l => l.level == competency) %>
-							<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.10);">
-								<div class="item-title">
-									<div class="item-title__name"><%= skill.name %></div>
-									<div class="badge"><%= skill.id %></div>
-									<div class="badge badge--ok">Level <%= competency %><% if (lev) { %> • <%= lev.level_name %><% } %></div>
-								</div>
-								<% if (skillLevel && skillLevel.brief_description) { %>
-									<div style="color: var(--muted); font-size: 13px;"><%= skillLevel.brief_description %></div>
-								<% } %>
+						<% if (entries.length > 0) { %>
+							<div class="table-wrap" style="margin-top: 10px;">
+								<table style="min-width: 720px;">
+									<thead>
+										<tr>
+											<th>Skill</th>
+											<th>Required Level</th>
+											<th>Description</th>
+										</tr>
+									</thead>
+									<tbody>
+										<% entries.forEach(({ skill, entry }) => { %>
+											<% const competency = entry.required_level %>
+											<% let skillLevel = (skill.levels || []).find(l => l.level == competency) %>
+											<% let lev = (skills.levels || []).find(l => l.level == competency) %>
+											<tr>
+												<td>
+													<div class="item-title">
+														<a class="item-title__name" href="/skills/<%= skill.id %>/"><%= skill.name %></a>
+														<span class="badge"><%= skill.id %></span>
+													</div>
+												</td>
+												<td>
+													<a href="/skills/<%= skill.id %>/level/<%= competency %>">
+														<span class="badge badge--ok">Level <%= competency %><% if (lev) { %> • <%= lev.level_name %><% } %></span>
+													</a>
+												</td>
+												<td style="color: var(--muted); font-size: 13px;">
+													<% if (skillLevel) { %>
+														<% const brief = (skillLevel.brief_description || '').trim() %>
+														<% const full = (skillLevel.full_description || '').trim() %>
+														<% if (brief) { %>
+															<%= brief %>
+														<% } else if (full) { %>
+															<%= full.length > 220 ? (full.slice(0, 220) + '…') : full %>
+														<% } else { %>
+															<span style="color: var(--faint);">No skill-level description available.</span>
+														<% } %>
+													<% } else { %>
+														<span style="color: var(--faint);">No skill-level description available.</span>
+													<% } %>
+												</td>
+											</tr>
+										<% }) %>
+									</tbody>
+								</table>
 							</div>
-						<% }) %>
+						<% } %>
 					</div>
 				</section>
 			<% }); %>

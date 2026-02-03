@@ -8,7 +8,7 @@
     "roles": "node -e 'require(\"./index.js\").readRoles(true).catch(e=>{console.error(e);process.exit(1);})'",
     "doBoth": "node -e 'require(\"./index.js\").doBoth().catch(e=>{console.error(e);process.exit(1);})'",
     "start": "nodemon --inspect index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,13 @@
     "ejs": "^3.1.10",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
-    "pg": "^8.12.0",
     "node-json2html": "^3.2.2",
     "nodemon": "^3.1.0",
+    "pg": "^8.12.0",
     "tableify": "^1.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.2.2"
   }
 }

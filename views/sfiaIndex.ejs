@@ -10,7 +10,7 @@
 
 		<section class="hero">
 			<h1>SFIA Skills (CSV)</h1>
-			<p>Browse SFIA skills from the imported CSV. Click a level cell to view the description for that level.</p>
+			<p>Browse SFIA skills from the imported CSV. Click a level cell to view the description for that level. Red badges indicate an AI-generated description overlay.</p>
 		</section>
 
 		<section class="card">
@@ -36,8 +36,11 @@
 								<td><%= row.Subcategory %></td>
 								<% for (let level = 1; level <= 7; level++) { %>
 									<td>
+										<% const isAi = row && row.__ai && row.__ai[String(level)] %>
 										<a href="/sfia/<%= row.Code %>/level/<%= level %>">
-											<span class="badge badge--ok"><%= row['Level ' + level] || '' %></span>
+											<span class="badge <%= isAi ? 'badge--ai' : 'badge--ok' %>" <% if (isAi) { %>title="AI-generated description"<% } %>>
+												<%= row['Level ' + level] || '' %>
+											</span>
 										</a>
 									</td>
 								<% } %>
@@ -52,4 +55,3 @@
 	</div>
 </body>
 </html>
-

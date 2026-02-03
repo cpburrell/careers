@@ -14,7 +14,8 @@
 				<span class="badge"><%= row.Code %></span>
 				<span class="badge badge--accent"><%= row.Category %></span>
 				<span class="badge"><%= row.Subcategory %></span>
-				<span class="badge badge--ok">Level <%= levelId %></span>
+				<% const isAi = row && row.__ai && row.__ai[String(levelId)] %>
+				<span class="badge <%= isAi ? 'badge--ai' : 'badge--ok' %>">Level <%= levelId %></span>
 			</p>
 		</section>
 
@@ -32,4 +33,3 @@
 	</div>
 </body>
 </html>
-

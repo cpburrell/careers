@@ -19,7 +19,7 @@ Persistence:
 - To delete the data: stop Postgres (`docker compose down`) and remove `./.pgdata/`.
 
 Initialization:
-- On first container creation (empty `./.pgdata/`), Postgres automatically runs `db/init_dev.sql` and loads the current `skills.json`, `roles.json`, and SFIA CSV.
+- On first container creation (empty `./.pgdata/`), Postgres automatically runs `db/init_dev.sql` and loads the current `roles.json` and SFIA CSV.
 - To re-run initialization, delete `./.pgdata/` and start Postgres again.
 
 Users:
@@ -28,7 +28,7 @@ Users:
 
 ### Switching data sources
 
-By default the app reads from local files (`skills.json`, `roles.json`, and the SFIA CSV).
+By default the app reads from local files (`roles.json`, `sfia_levels.json`, and the SFIA CSV).
 
 - File mode (default): `CAREERS_DATA_SOURCE=file`
 - Postgres mode: `CAREERS_DATA_SOURCE=db` (requires the dev DB init step above)

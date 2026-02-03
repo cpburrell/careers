@@ -1,0 +1,600 @@
+{
+  "generated_at": "2026-02-03",
+  "source_file": "sfia-8_en_220221.xlsx - Skills.csv",
+  "descriptions": {
+    "ITSP": {
+      "1": "AI created: Level 1 (Follow). Supports Strategic planning activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Strategic planning work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Strategic planning techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Strategic planning activities in Strategy and planning (Strategy and architecture) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "ISCO": {
+      "1": "AI created: Level 1 (Follow). Supports Information systems coordination activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Information systems coordination work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Information systems coordination techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Information systems coordination activities in Strategy and planning (Strategy and architecture) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes.",
+      "5": "AI created: Level 5 (Ensure & Advise). Leads Information systems coordination practice in Strategy and planning (Strategy and architecture), plans and directs work, and advises stakeholders on approach, trade-offs, and priorities. Reviews deliverables for completeness and quality and helps establish consistent ways of working across teams."
+    },
+    "IRMG": {
+      "1": "AI created: Level 1 (Follow). Supports Information management activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Information management work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Information management techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "STPL": {
+      "1": "AI created: Level 1 (Follow). Supports Enterprise and business architecture activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Enterprise and business architecture work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Enterprise and business architecture techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Enterprise and business architecture activities in Strategy and planning (Strategy and architecture) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "ARCH": {
+      "1": "AI created: Level 1 (Follow). Supports Solution architecture activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Solution architecture work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Solution architecture techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Solution architecture in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "INOV": {
+      "1": "AI created: Level 1 (Follow). Supports Innovation activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Innovation work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Innovation techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Innovation activities in Strategy and planning (Strategy and architecture) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "EMRG": {
+      "1": "AI created: Level 1 (Follow). Supports Emerging technology monitoring activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Emerging technology monitoring work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Emerging technology monitoring techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Emerging technology monitoring in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "RSCH": {
+      "1": "AI created: Level 1 (Follow). Supports Research activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Research in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DEMM": {
+      "1": "AI created: Level 1 (Follow). Supports Demand management activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Demand management work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Demand management techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Demand management activities in Strategy and planning (Strategy and architecture) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Demand management in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "INVA": {
+      "1": "AI created: Level 1 (Follow). Supports Investment appraisal activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Investment appraisal work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Investment appraisal techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Investment appraisal in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "FMIT": {
+      "1": "AI created: Level 1 (Follow). Supports Financial management activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Financial management work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Financial management techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Financial management in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "MEAS": {
+      "1": "AI created: Level 1 (Follow). Supports Measurement activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Measurement work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Measurement in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SUST": {
+      "1": "AI created: Level 1 (Follow). Supports Sustainability activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Sustainability work in Strategy and planning (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Sustainability techniques in Strategy and planning (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Sustainability in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "COPL": {
+      "1": "AI created: Level 1 (Follow). Supports Continuity management activities in Strategy and planning (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Continuity management in Strategy and planning (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SCTY": {
+      "1": "AI created: Level 1 (Follow). Supports Information security activities in Security and privacy (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Information security work in Security and privacy (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track."
+    },
+    "INAS": {
+      "1": "AI created: Level 1 (Follow). Supports Information assurance activities in Security and privacy (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Information assurance work in Security and privacy (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track."
+    },
+    "PEDP": {
+      "1": "AI created: Level 1 (Follow). Supports Personal data protection activities in Security and privacy (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Personal data protection work in Security and privacy (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Personal data protection techniques in Security and privacy (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Personal data protection activities in Security and privacy (Strategy and architecture) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Personal data protection in Security and privacy (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "VURE": {
+      "1": "AI created: Level 1 (Follow). Supports Vulnerability research activities in Security and privacy (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Vulnerability research work in Security and privacy (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Vulnerability research in Security and privacy (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "THIN": {
+      "1": "AI created: Level 1 (Follow). Supports Threat intelligence activities in Security and privacy (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Threat intelligence in Security and privacy (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "GOVN": {
+      "1": "AI created: Level 1 (Follow). Supports Governance activities in Governance, risk and compliance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Governance work in Governance, risk and compliance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Governance techniques in Governance, risk and compliance (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Governance activities in Governance, risk and compliance (Strategy and architecture) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes.",
+      "5": "AI created: Level 5 (Ensure & Advise). Leads Governance practice in Governance, risk and compliance (Strategy and architecture), plans and directs work, and advises stakeholders on approach, trade-offs, and priorities. Reviews deliverables for completeness and quality and helps establish consistent ways of working across teams."
+    },
+    "BURM": {
+      "1": "AI created: Level 1 (Follow). Supports Risk management activities in Governance, risk and compliance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Risk management work in Governance, risk and compliance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track."
+    },
+    "AUDT": {
+      "1": "AI created: Level 1 (Follow). Supports Audit activities in Governance, risk and compliance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Audit work in Governance, risk and compliance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track."
+    },
+    "QUMG": {
+      "1": "AI created: Level 1 (Follow). Supports Quality management activities in Governance, risk and compliance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Quality management work in Governance, risk and compliance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track."
+    },
+    "QUAS": {
+      "1": "AI created: Level 1 (Follow). Supports Quality assurance activities in Governance, risk and compliance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Quality assurance work in Governance, risk and compliance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Quality assurance in Governance, risk and compliance (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "CNSL": {
+      "1": "AI created: Level 1 (Follow). Supports Consultancy activities in Advice and guidance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Consultancy work in Advice and guidance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Consultancy techniques in Advice and guidance (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "TECH": {
+      "1": "AI created: Level 1 (Follow). Supports Specialist advice activities in Advice and guidance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Specialist advice work in Advice and guidance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Specialist advice techniques in Advice and guidance (Strategy and architecture) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Specialist advice in Advice and guidance (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "METL": {
+      "1": "AI created: Level 1 (Follow). Supports Methods and tools activities in Advice and guidance (Strategy and architecture) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Methods and tools work in Advice and guidance (Strategy and architecture) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Methods and tools in Advice and guidance (Strategy and architecture) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "POMG": {
+      "1": "AI created: Level 1 (Follow). Supports Portfolio management activities in Change implementation (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Portfolio management work in Change implementation (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Portfolio management techniques in Change implementation (Change and transformation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Portfolio management activities in Change implementation (Change and transformation) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "PGMG": {
+      "1": "AI created: Level 1 (Follow). Supports Programme management activities in Change implementation (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Programme management work in Change implementation (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Programme management techniques in Change implementation (Change and transformation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Programme management activities in Change implementation (Change and transformation) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes.",
+      "5": "AI created: Level 5 (Ensure & Advise). Leads Programme management practice in Change implementation (Change and transformation), plans and directs work, and advises stakeholders on approach, trade-offs, and priorities. Reviews deliverables for completeness and quality and helps establish consistent ways of working across teams."
+    },
+    "PRMG": {
+      "1": "AI created: Level 1 (Follow). Supports Project management activities in Change implementation (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Project management work in Change implementation (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Project management techniques in Change implementation (Change and transformation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "PROF": {
+      "1": "AI created: Level 1 (Follow). Supports Portfolio, programme and project support activities in Change implementation (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Portfolio, programme and project support in Change implementation (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "BUSA": {
+      "1": "AI created: Level 1 (Follow). Supports Business situation analysis activities in Change analysis (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Business situation analysis work in Change analysis (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Business situation analysis in Change analysis (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "FEAS": {
+      "1": "AI created: Level 1 (Follow). Supports Feasibility assessment activities in Change analysis (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Feasibility assessment work in Change analysis (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Feasibility assessment in Change analysis (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "REQM": {
+      "1": "AI created: Level 1 (Follow). Supports Requirements definition and management activities in Change analysis (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Requirements definition and management in Change analysis (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "BSMO": {
+      "1": "AI created: Level 1 (Follow). Supports Business modelling activities in Change analysis (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Business modelling in Change analysis (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "BPTS": {
+      "1": "AI created: Level 1 (Follow). Supports Acceptance testing activities in Change analysis (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Acceptance testing in Change analysis (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "BPRE": {
+      "1": "AI created: Level 1 (Follow). Supports Business process improvement activities in Change planning (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Business process improvement work in Change planning (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Business process improvement techniques in Change planning (Change and transformation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Business process improvement activities in Change planning (Change and transformation) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "OCDV": {
+      "1": "AI created: Level 1 (Follow). Supports Organisational capability development activities in Change planning (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Organisational capability development work in Change planning (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Organisational capability development techniques in Change planning (Change and transformation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Organisational capability development activities in Change planning (Change and transformation) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "ORDI": {
+      "1": "AI created: Level 1 (Follow). Supports Organisation design and implementation activities in Change planning (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Organisation design and implementation work in Change planning (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Organisation design and implementation techniques in Change planning (Change and transformation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "CIPM": {
+      "1": "AI created: Level 1 (Follow). Supports Organisational change management activities in Change planning (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Organisational change management work in Change planning (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Organisational change management in Change planning (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "BENM": {
+      "1": "AI created: Level 1 (Follow). Supports Benefits management activities in Change planning (Change and transformation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Benefits management work in Change planning (Change and transformation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Benefits management techniques in Change planning (Change and transformation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Benefits management activities in Change planning (Change and transformation) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Benefits management in Change planning (Change and transformation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "PROD": {
+      "1": "AI created: Level 1 (Follow). Supports Product management activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Product management work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Product management in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DLMG": {
+      "1": "AI created: Level 1 (Follow). Supports Systems development management activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Systems development management work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Systems development management techniques in Systems development (Development and implementation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Systems development management activities in Systems development (Development and implementation) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "SLEN": {
+      "1": "AI created: Level 1 (Follow). Supports Systems and software life cycle engineering activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Systems and software life cycle engineering work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Systems and software life cycle engineering techniques in Systems development (Development and implementation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "DESN": {
+      "1": "AI created: Level 1 (Follow). Supports Systems design activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Systems design work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Systems design in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SWDN": {
+      "1": "AI created: Level 1 (Follow). Supports Software design activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Software design in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "NTDS": {
+      "1": "AI created: Level 1 (Follow). Supports Network design activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Network design work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Network design in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "HWDE": {
+      "1": "AI created: Level 1 (Follow). Supports Hardware design activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Hardware design work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Hardware design in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "PROG": {
+      "1": "AI created: Level 1 (Follow). Supports Programming/software development activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Programming/software development in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SINT": {
+      "1": "AI created: Level 1 (Follow). Supports Systems integration and build activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Systems integration and build in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "TEST": {
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Testing in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "PORT": {
+      "1": "AI created: Level 1 (Follow). Supports Software configuration activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Software configuration work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Software configuration in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "RESD": {
+      "1": "AI created: Level 1 (Follow). Supports Real-time/embedded systems development activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Real-time/embedded systems development in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SFEN": {
+      "1": "AI created: Level 1 (Follow). Supports Safety engineering activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Safety engineering work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Safety engineering in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SFAS": {
+      "1": "AI created: Level 1 (Follow). Supports Safety assessment activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Safety assessment work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Safety assessment techniques in Systems development (Development and implementation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Safety assessment in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "RFEN": {
+      "1": "AI created: Level 1 (Follow). Supports Radio frequency engineering activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Radio frequency engineering in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "ADEV": {
+      "1": "AI created: Level 1 (Follow). Supports Animation development activities in Systems development (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Animation development work in Systems development (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Animation development in Systems development (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DATM": {
+      "1": "AI created: Level 1 (Follow). Supports Data management activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Data management work in Data and analytics (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Data management techniques in Data and analytics (Development and implementation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Data management in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DTAN": {
+      "1": "AI created: Level 1 (Follow). Supports Data modelling and design activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Data modelling and design in Data and analytics (Development and implementation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Data modelling and design in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DBDS": {
+      "1": "AI created: Level 1 (Follow). Supports Database design activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Database design work in Data and analytics (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Database design in Data and analytics (Development and implementation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Database design in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DENG": {
+      "1": "AI created: Level 1 (Follow). Supports Data engineering activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Data engineering in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DBAD": {
+      "1": "AI created: Level 1 (Follow). Supports Database administration activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Database administration in Data and analytics (Development and implementation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Database administration in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DATS": {
+      "1": "AI created: Level 1 (Follow). Supports Data science activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise."
+    },
+    "MLNG": {
+      "1": "AI created: Level 1 (Follow). Supports Machine learning activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Machine learning in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "BINT": {
+      "1": "AI created: Level 1 (Follow). Supports Business intelligence activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Business intelligence in Data and analytics (Development and implementation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Business intelligence in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "VISL": {
+      "1": "AI created: Level 1 (Follow). Supports Data visualisation activities in Data and analytics (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Data visualisation work in Data and analytics (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Data visualisation in Data and analytics (Development and implementation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Data visualisation in Data and analytics (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "URCH": {
+      "1": "AI created: Level 1 (Follow). Supports User research activities in User experience (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with User research work in User experience (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for User research in User experience (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "UNAN": {
+      "1": "AI created: Level 1 (Follow). Supports User experience analysis activities in User experience (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with User experience analysis work in User experience (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for User experience analysis in User experience (Development and implementation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for User experience analysis in User experience (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "HCEV": {
+      "1": "AI created: Level 1 (Follow). Supports User experience design activities in User experience (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with User experience design work in User experience (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for User experience design in User experience (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "USEV": {
+      "1": "AI created: Level 1 (Follow). Supports User experience evaluation activities in User experience (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for User experience evaluation in User experience (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "INCA": {
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Content authoring in Content management (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "ICPM": {
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Content publishing in Content management (Development and implementation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "KNOW": {
+      "1": "AI created: Level 1 (Follow). Supports Knowledge management activities in Content management (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise."
+    },
+    "SCMO": {
+      "1": "AI created: Level 1 (Follow). Supports Scientific modelling activities in Computational science (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Scientific modelling work in Computational science (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Scientific modelling techniques in Computational science (Development and implementation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "NUAN": {
+      "1": "AI created: Level 1 (Follow). Supports Numerical analysis activities in Computational science (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Numerical analysis work in Computational science (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Numerical analysis techniques in Computational science (Development and implementation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "HPCC": {
+      "1": "AI created: Level 1 (Follow). Supports High-performance computing activities in Computational science (Development and implementation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with High-performance computing work in Computational science (Development and implementation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established High-performance computing techniques in Computational science (Development and implementation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "ITMG": {
+      "1": "AI created: Level 1 (Follow). Supports Technology service management activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Technology service management work in Technology management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Technology service management techniques in Technology management (Delivery and operation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "4": "AI created: Level 4 (Enable). Performs Technology service management activities in Technology management (Delivery and operation) for complex or ambiguous situations, selecting appropriate methods and tailoring outputs. Provides guidance to others, assures quality, and coordinates stakeholders to reach practical outcomes."
+    },
+    "ASUP": {
+      "1": "AI created: Level 1 (Follow). Supports Application support activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Application support in Technology management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Application support in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "ITOP": {
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for IT infrastructure in Technology management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for IT infrastructure in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SYSP": {
+      "1": "AI created: Level 1 (Follow). Supports System software activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with System software work in Technology management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for System software in Technology management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for System software in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "NTAS": {
+      "1": "AI created: Level 1 (Follow). Supports Network support activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Network support in Technology management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Network support in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "HSIN": {
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Systems installation and removal in Technology management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Systems installation and removal in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "CFMG": {
+      "1": "AI created: Level 1 (Follow). Supports Configuration management activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Configuration management in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "RELM": {
+      "1": "AI created: Level 1 (Follow). Supports Release and deployment activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Release and deployment work in Technology management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Release and deployment in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "STMG": {
+      "1": "AI created: Level 1 (Follow). Supports Storage management activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Storage management work in Technology management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Storage management in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DCMA": {
+      "1": "AI created: Level 1 (Follow). Supports Facilities management activities in Technology management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Facilities management work in Technology management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Facilities management in Technology management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SLMO": {
+      "1": "AI created: Level 1 (Follow). Supports Service level management activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise."
+    },
+    "SCMG": {
+      "1": "AI created: Level 1 (Follow). Supports Service catalogue management activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Service catalogue management work in Service management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Service catalogue management in Service management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Service catalogue management in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "AVMT": {
+      "1": "AI created: Level 1 (Follow). Supports Availability management activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Availability management work in Service management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Availability management techniques in Service management (Delivery and operation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Availability management in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "CPMG": {
+      "1": "AI created: Level 1 (Follow). Supports Capacity management activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Capacity management work in Service management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Capacity management techniques in Service management (Delivery and operation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Capacity management in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "USUP": {
+      "1": "AI created: Level 1 (Follow). Supports Incident management activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Incident management in Service management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Incident management in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "PBMG": {
+      "1": "AI created: Level 1 (Follow). Supports Problem management activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Problem management work in Service management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Problem management in Service management (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Problem management in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "CHMG": {
+      "1": "AI created: Level 1 (Follow). Supports Change control activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Change control in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "ASMG": {
+      "1": "AI created: Level 1 (Follow). Supports Asset management activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Asset management in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SEAC": {
+      "1": "AI created: Level 1 (Follow). Supports Service acceptance activities in Service management (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Service acceptance work in Service management (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Service acceptance techniques in Service management (Delivery and operation) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Service acceptance in Service management (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SCAD": {
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Security operations in Security services (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "VUAS": {
+      "1": "AI created: Level 1 (Follow). Supports Vulnerability assessment activities in Security services (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Vulnerability assessment in Security services (Delivery and operation) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Vulnerability assessment in Security services (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "DGFS": {
+      "1": "AI created: Level 1 (Follow). Supports Digital forensics activities in Security services (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Digital forensics work in Security services (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Digital forensics in Security services (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "PENT": {
+      "1": "AI created: Level 1 (Follow). Supports Penetration testing activities in Security services (Delivery and operation) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Penetration testing work in Security services (Delivery and operation) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Penetration testing in Security services (Delivery and operation) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "PEMT": {
+      "1": "AI created: Level 1 (Follow). Supports Performance management activities in People management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Performance management work in People management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Performance management techniques in People management (People and skills) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Performance management in People management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "EEXP": {
+      "1": "AI created: Level 1 (Follow). Supports Employee experience activities in People management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Employee experience work in People management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Employee experience techniques in People management (People and skills) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Employee experience in People management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "OFCL": {
+      "1": "AI created: Level 1 (Follow). Supports Organisational facilitation activities in People management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Organisational facilitation work in People management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Organisational facilitation techniques in People management (People and skills) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Organisational facilitation in People management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "PDSV": {
+      "1": "AI created: Level 1 (Follow). Supports Professional development activities in People management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Professional development work in People management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Professional development techniques in People management (People and skills) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Professional development in People management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "WFPL": {
+      "1": "AI created: Level 1 (Follow). Supports Workforce planning activities in People management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Workforce planning work in People management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Workforce planning techniques in People management (People and skills) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Workforce planning in People management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "RESC": {
+      "1": "AI created: Level 1 (Follow). Supports Resourcing activities in People management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Resourcing work in People management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Resourcing in People management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "ETMG": {
+      "1": "AI created: Level 1 (Follow). Supports Learning and development management activities in Skills management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Learning and development management work in Skills management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track."
+    },
+    "TMCR": {
+      "1": "AI created: Level 1 (Follow). Supports Learning design and development activities in Skills management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Learning design and development work in Skills management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Learning design and development in Skills management (People and skills) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Learning design and development in Skills management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "ETDL": {
+      "1": "AI created: Level 1 (Follow). Supports Learning delivery activities in Skills management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "6": "AI created: Level 6 (Initiate & Influence). Sets direction for Learning delivery in Skills management (People and skills) at organisational level, shaping standards, governance, and long-term plans. Influences senior stakeholders, balances risk and value, and sponsors major improvements across multiple domains.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Learning delivery in Skills management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "LEDA": {
+      "1": "AI created: Level 1 (Follow). Supports Competency assessment activities in Skills management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Competency assessment work in Skills management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Competency assessment in Skills management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "CSOP": {
+      "1": "AI created: Level 1 (Follow). Supports Certification scheme operation activities in Skills management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Certification scheme operation in Skills management (People and skills) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "TEAC": {
+      "1": "AI created: Level 1 (Follow). Supports Teaching activities in Skills management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise."
+    },
+    "SUBF": {
+      "1": "AI created: Level 1 (Follow). Supports Subject formation activities in Skills management (People and skills) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Subject formation work in Skills management (People and skills) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Subject formation techniques in Skills management (People and skills) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "SORC": {
+      "1": "AI created: Level 1 (Follow). Supports Sourcing activities in Stakeholder management (Relationships and engagement) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise."
+    },
+    "SUPP": {
+      "1": "AI created: Level 1 (Follow). Supports Supplier management activities in Stakeholder management (Relationships and engagement) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise."
+    },
+    "ITCM": {
+      "1": "AI created: Level 1 (Follow). Supports Contract management activities in Stakeholder management (Relationships and engagement) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Contract management work in Stakeholder management (Relationships and engagement) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Contract management in Stakeholder management (Relationships and engagement) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "RLMT": {
+      "1": "AI created: Level 1 (Follow). Supports Stakeholder relationship management activities in Stakeholder management (Relationships and engagement) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Stakeholder relationship management work in Stakeholder management (Relationships and engagement) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "3": "AI created: Level 3 (Apply). Applies established Stakeholder relationship management techniques in Stakeholder management (Relationships and engagement) to well-defined problems and delivers complete work products. Explains findings clearly, documents decisions, and adapts within agreed standards when needed."
+    },
+    "CSMG": {
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Customer service support in Stakeholder management (Relationships and engagement) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "ADMN": {
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Business administration in Stakeholder management (Relationships and engagement) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "MKTG": {
+      "1": "AI created: Level 1 (Follow). Supports Marketing activities in Sales and marketing (Relationships and engagement) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Marketing in Sales and marketing (Relationships and engagement) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SALE": {
+      "1": "AI created: Level 1 (Follow). Supports Selling activities in Sales and marketing (Relationships and engagement) by following defined instructions and templates. Collects and records basic information accurately and escalates issues when they arise.",
+      "2": "AI created: Level 2 (Assist). Assists with Selling work in Sales and marketing (Relationships and engagement) by gathering inputs, organising information, and contributing to drafts. Works with guidance, checks understanding with peers, and helps keep tasks on track.",
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Selling in Sales and marketing (Relationships and engagement) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    },
+    "SSUP": {
+      "7": "AI created: Level 7 (Inspire & Mobilise). Defines vision for Sales support in Sales and marketing (Relationships and engagement) across the enterprise or wider ecosystem, mobilising people and resources to deliver strategic change. Champions best practice, builds key relationships, and drives sustained capability development at scale."
+    }
+  }
+}

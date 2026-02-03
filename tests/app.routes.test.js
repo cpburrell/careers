@@ -41,6 +41,24 @@ describe('app routes', () => {
 		expect(res.text).toContain('<h1>SFIA Skills (CSV)</h1>');
 	});
 
+	test('SFIA pages use AI overlay when source descriptions are missing', async () => {
+		const rows = dataStore.getSfiaCSV();
+		const rowWithAi = (rows || []).find((r) => r && r.Code && r.__ai && Object.keys(r.__ai).length > 0);
+		expect(rowWithAi).toBeTruthy();
+
+		const aiLevels = Object.keys(rowWithAi.__ai);
+		const levelId = aiLevels.find((l) => rowWithAi.__ai[l]) || aiLevels[0];
+		expect(levelId).toBeTruthy();
+
+		const desc = rowWithAi[`Level ${levelId} description`];
+		expect(typeof desc).toBe('string');
+		expect(desc).toMatch(/^AI created:/);
+
+		const res = await request(app).get(`/sfia/${rowWithAi.Code}/level/${levelId}`);
+		expect(res.status).toBe(200);
+		expect(res.text).toContain('badge--ai');
+	});
+
 	test('GET /roles/:roleId/pathway/:pathwayId/level/:levelId renders', async () => {
 		const roles = dataStore.getRoles();
 		const role = (roles.roles || [])[0];
@@ -69,4 +87,3 @@ describe('app routes', () => {
 		expect(res.text).toContain('Invalid level');
 	});
 });
-

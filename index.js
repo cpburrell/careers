@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
 const dataStore = require('./lib/dataStore');
+const createApp = require('./lib/createApp');
 
 function exitHandler(options, exitCode) {
 
@@ -34,23 +32,8 @@ if (require.main === module) {
 		// ignore if dotenv isn't installed
 	}
 
-	const createSkillsRouter = require('./routes/skills');
-	const createRolesRouter = require('./routes/roles');
-	const createSfiaRouter = require('./routes/sfia');
-
-	const express = require('express');
-	const app = express();
+	const app = createApp({ dataStore });
 	const port = process.env.PORT || 3000;
-
-	app.set('view engine', 'ejs');
-
-	app.get('/', (req, res) => {
-		res.send('Hello World!');
-	});
-
-	app.use('/skills', createSkillsRouter(dataStore));
-	app.use('/roles', createRolesRouter(dataStore));
-	app.use('/sfia', createSfiaRouter(dataStore));
 
 	//do something when app is closing
 	process.on('exit', exitHandler.bind(null,{cleanup:true}));

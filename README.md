@@ -118,3 +118,7 @@ To force re-init:
 ## Notes
 
 - SFIA content may be subject to licensing restrictions. Be cautious before publishing full SFIA descriptions publicly.
+
+## Git workflow
+
+This repo uses a git-flow style workflow. See `CONTRIBUTING.md`.

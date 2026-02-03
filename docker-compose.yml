@@ -1,4 +1,23 @@
 services:
+  app:
+    build: .
+    container_name: careers-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PORT: 3000
+      CAREERS_DATA_SOURCE: ${CAREERS_DATA_SOURCE:-db}
+      PGHOST: postgres
+      PGPORT: 5432
+      PGUSER: ${CAREERS_DB_USER:-careers}
+      PGPASSWORD: ${CAREERS_DB_PASSWORD:-careers}
+      PGDATABASE: ${POSTGRES_DB:-careers}
+      PGSSLMODE: ${PGSSLMODE:-disable}
+    ports:
+      - "${APP_PORT:-3000}:3000"
+
   postgres:
     image: postgres:16-alpine
     container_name: careers-postgres

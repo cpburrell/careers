@@ -6,4 +6,5 @@ sfia-8_en_220221.xlsx
 .vscode/
 .env
 .env.*
+!.env.example
 .pgdata/

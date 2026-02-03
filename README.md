@@ -64,11 +64,21 @@ See `.env.example` for connection variables.
 
 ## Postgres (dev via Docker)
 
-This repo includes a `docker-compose.yml` that runs Postgres locally.
+This repo includes a `docker-compose.yml` that can run **both** the app and Postgres.
 
 ### Start / stop
-- Start: `docker compose up -d postgres`
+- Start app + DB: `docker compose up -d --build`
+- Start DB only: `docker compose up -d postgres`
 - Stop: `docker compose down`
+
+Convenience scripts:
+- `bin/docker-up.sh`
+- `bin/docker-down.sh`
+- `bin/docker-logs.sh`
+- `bin/docker-reset-db.sh`
+
+Make scripts executable once:
+- `chmod +x bin/docker-*.sh`
 
 ### Persistence
 - Postgres data is persisted to `./.pgdata/` and survives restarts/reboots.

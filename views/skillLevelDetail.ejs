@@ -9,7 +9,7 @@
 	<%- include('_styles') %>
 </head>
 
-<body>
+	<body>
 	<div class="page">
 		<%- include('_nav') %>
 
@@ -17,7 +17,7 @@
 			<h1><%= skill.name %></h1>
 			<p>
 				<span class="badge"><%= skill.id %></span>
-				<span class="badge badge--ok">Level <%= levelId %></span>
+				<span class="badge <%= level.is_ai ? 'badge--ai' : 'badge--ok' %>" <% if (level.is_ai) { %>title="AI-generated description"<% } %>>Level <%= levelId %></span>
 				<span class="badge badge--accent"><%= (skills.levels.find(l => l.level == levelId) || {}).level_name || '' %></span>
 			</p>
 		</section>

@@ -4,11 +4,20 @@ This repo follows a **git-flow** style branching model.
 
 ## Branches
 
-- `master`: production-ready history (release tags / PR merges land here)
+- `master`: production-ready history (**only updated by releases/hotfixes**, not day-to-day dev)
 - `develop`: integration branch for day-to-day development
 - `feature/*`: new work (branch off `develop`, PR back into `develop`)
 - `release/*`: stabilization branches (branch off `develop`, PR into `master` + back-merge into `develop`)
 - `hotfix/*`: urgent fixes (branch off `master`, PR into `master` + back-merge into `develop`)
+
+## Local development
+
+Do local development first (VS Code), and only push when a change is ready for review.
+
+Recommended loop:
+- Run/debug locally via VS Code (no Docker required for the app)
+- Run tests locally: `npm test`
+- Push feature branches and open PRs into `develop`
 
 ## Setup (git-flow tooling)
 
@@ -49,4 +58,3 @@ Or if you prefer PRs and keeping branches:
 - Fix + commit
 - `git flow hotfix finish hotfix-<short-desc>`
 - Push `master` + tags + `develop`
-

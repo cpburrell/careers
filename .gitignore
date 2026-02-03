@@ -4,6 +4,8 @@ node_modules/
 package-lock.json
 sfia-8_en_220221.xlsx
 .vscode/
+!.vscode/
+!.vscode/launch.json
 .env
 .env.*
 !.env.example

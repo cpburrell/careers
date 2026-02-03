@@ -73,12 +73,24 @@ This repo includes a `docker-compose.yml` that can run **both** the app and Post
 
 Convenience scripts:
 - `bin/docker-up.sh`
+- `bin/docker-up-debug.sh`
 - `bin/docker-down.sh`
 - `bin/docker-logs.sh`
 - `bin/docker-reset-db.sh`
 
 Make scripts executable once:
 - `chmod +x bin/docker-*.sh`
+
+### VS Code debugging (Docker)
+
+Option A (recommended): debug on-host, DB in Docker
+- Start DB: `docker compose up -d postgres`
+- Use `.vscode/launch.json` → `Launch Program`
+
+Option B: debug the app inside Docker
+- Start app + DB with debugger enabled: `bin/docker-up-debug.sh`
+- In VS Code, use `.vscode/launch.json` → `Attach to Docker (careers-app)`
+- Inspector port is `APP_DEBUG_PORT` (default `9229`)
 
 ### Persistence
 - Postgres data is persisted to `./.pgdata/` and survives restarts/reboots.

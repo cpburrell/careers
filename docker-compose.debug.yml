@@ -1,0 +1,11 @@
+services:
+  app:
+    environment:
+      NODE_ENV: development
+    command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
+    ports:
+      - "${APP_DEBUG_PORT:-9229}:9229"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+

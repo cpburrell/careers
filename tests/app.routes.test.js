@@ -59,6 +59,23 @@ describe('app routes', () => {
 		expect(res.text).toContain('badge--ai');
 	});
 
+	test('Skill level page shows AI descriptions with red badge and no level label inside AI text', async () => {
+		const skills = dataStore.getSkills();
+		const skillWithAi = (skills.skills || []).find((s) => (s.levels || []).some((l) => l && l.is_ai));
+		expect(skillWithAi).toBeTruthy();
+
+		const aiLevel = (skillWithAi.levels || []).find((l) => l && l.is_ai);
+		expect(aiLevel).toBeTruthy();
+
+		expect(aiLevel.full_description).toMatch(/^AI created:/);
+		expect(aiLevel.full_description).not.toMatch(/^AI created:.*Level\\s+\\d+/);
+
+		const res = await request(app).get(`/skills/${skillWithAi.id}/level/${aiLevel.level}`);
+		expect(res.status).toBe(200);
+		expect(res.text).toContain('badge--ai');
+		expect(res.text).not.toMatch(/AI created:.*Level\\s+\\d+/);
+	});
+
 	test('GET /roles/:roleId/pathway/:pathwayId/level/:levelId renders', async () => {
 		const roles = dataStore.getRoles();
 		const role = (roles.roles || [])[0];

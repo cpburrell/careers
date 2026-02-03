@@ -39,7 +39,7 @@
 										<% const isAi = row && row.__ai && row.__ai[String(level)] %>
 										<a href="/sfia/<%= row.Code %>/level/<%= level %>">
 											<span class="badge <%= isAi ? 'badge--ai' : 'badge--ok' %>" <% if (isAi) { %>title="AI-generated description"<% } %>>
-												<%= row['Level ' + level] || '' %>
+												<%= row['Level ' + level] || level %>
 											</span>
 										</a>
 									</td>

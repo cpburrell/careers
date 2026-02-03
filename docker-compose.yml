@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: careers-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-careers}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      CAREERS_DB_USER: ${CAREERS_DB_USER:-careers}
+      CAREERS_DB_PASSWORD: ${CAREERS_DB_PASSWORD:-careers}
+    ports:
+      - "${PGPORT:-5432}:5432"
+    volumes:
+      - ./.pgdata:/var/lib/postgresql/data
+      - ./:/workspace:ro
+      - ./db/init_roles.sh:/docker-entrypoint-initdb.d/000_init_roles.sh:ro
+      - ./db/init_dev.sql:/docker-entrypoint-initdb.d/010_init_dev.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 10

@@ -6,21 +6,31 @@
 
 <head>
 	<title>Skill Detail - <%= skill.name %> - Level <%= levelId %></title>
+	<%- include('_styles') %>
 </head>
 
 <body>
-	<h1><%= skill.name %> Skill Detail - Level <%= levelId %></h1>
+	<div class="page">
+		<%- include('_nav') %>
 
-	<h3>Full Description</h3>
+		<section class="hero">
+			<h1><%= skill.name %></h1>
+			<p>
+				<span class="badge"><%= skill.id %></span>
+				<span class="badge badge--ok">Level <%= levelId %></span>
+				<span class="badge badge--accent"><%= (skills.levels.find(l => l.level == levelId) || {}).level_name || '' %></span>
+			</p>
+		</section>
 
-	<i><%= level.full_description %></i></br></br>
+		<section class="card">
+			<div class="card__body">
+				<div style="color: var(--muted); font-size: 13px; margin-bottom: 10px;">Full description</div>
+				<div style="white-space: pre-wrap;"><%= level.full_description %></div>
+			</div>
+		</section>
 
-
+		<%- include('_footer') %>
+	</div>
 </body>
-<footer>
-</br>
-<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
-</br>
-</footer>
 
 </html>

@@ -2,39 +2,53 @@
 <html>
 <head>
 	<title>Skills</title>
+	<%- include('_styles') %>
 </head>
 <body>
-	<h1>Skills</h1>
-	<table border="1">
-		<tr>
-			<th>Name</th>
-			<% skills.levels.forEach(level=> { %>
-				<th>Level <%= level.level %> </th>
-			<% } ) %>
-		</tr>
-		<% skills.skills.forEach(skill => { %>
-			<tr>
-				<td>
-					<a href="/skills/<%= skill.id %>/ %>">
-						<%= skill.name %>
-					</a>
-				</td>
-				<% skills.levels.forEach(level=> { %>
-					<td>
-						<a href="/skills/<%= skill.id %>/level/<%= level.level %>">
-							<%= level.level_name %> </td>
-						</a>
-				<% } ) %>
-				</tr>
-		<% }); %>
-	</table>
+	<div class="page">
+		<%- include('_nav') %>
 
+		<section class="hero">
+			<h1>Skills</h1>
+			<p>Select a skill to view its level summaries, or jump straight into a specific level’s full description.</p>
+		</section>
 
+		<section class="card">
+			<div class="card__body table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th>Skill</th>
+							<% skills.levels.forEach(level=> { %>
+								<th><%= level.level %> • <%= level.level_name %></th>
+							<% } ) %>
+						</tr>
+					</thead>
+					<tbody>
+						<% skills.skills.forEach(skill => { %>
+							<tr>
+								<td>
+									<div class="item-title">
+										<a class="item-title__name" href="/skills/<%= skill.id %>/"><%= skill.name %></a>
+										<span class="badge"><%= skill.id %></span>
+									</div>
+									<div class="item-title__code"><%= (skills.categories.find(c => c.id === skill.category_id) || {}).name || skill.category_id %></div>
+								</td>
+								<% skills.levels.forEach(level=> { %>
+									<td>
+										<a href="/skills/<%= skill.id %>/level/<%= level.level %>">
+											<span class="badge badge--ok">Level <%= level.level %></span>
+										</a>
+									</td>
+								<% } ) %>
+							</tr>
+						<% }); %>
+					</tbody>
+				</table>
+			</div>
+		</section>
 
+		<%- include('_footer') %>
+	</div>
 </body>
-<footer>
-	</br>
-	<a href="/roles">Roles</a> - <a href="/skills">Skills</a>
-	</br>
-</footer>
 </html>

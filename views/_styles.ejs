@@ -104,11 +104,24 @@
 		}
 
 		.card {
-			border: 1px solid var(--border);
-			background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+			position: relative;
+			border: none;
+			background: linear-gradient(160deg, rgba(28, 38, 68, 0.90) 0%, rgba(12, 20, 44, 0.88) 100%);
 			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			backdrop-filter: blur(10px);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.11);
+			backdrop-filter: blur(16px);
+		}
+		.card::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 2px;
+			background: linear-gradient(to right, rgba(124, 92, 255, 0.85), rgba(37, 208, 171, 0.65));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			pointer-events: none;
 		}
 		.card__body { padding: 14px 14px; }
 
@@ -190,6 +203,10 @@
 			font-size: 12px;
 			padding: 4px 8px;
 			cursor: pointer;
+		}
+		.vote-form select option {
+			background: #1a2035;
+			color: rgba(255, 255, 255, 0.92);
 		}
 		.vote-form select:focus { outline: 1px solid var(--accent); }
 		.vote-form button {

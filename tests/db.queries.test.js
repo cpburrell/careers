@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 /**
  * Tests for db/queries.js (MariaDB votes).
  *
@@ -6,6 +8,8 @@
  */
 
 const queries = require('../db/queries');
+
+afterAll(() => queries.closePool());
 
 // ─── Unit: isDatabaseConfigured ──────────────────────────────────────────────
 

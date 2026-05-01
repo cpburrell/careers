@@ -88,10 +88,18 @@ async function getMyVotesForRoleLevel({ roleId, pathwayId, level, voterToken }) 
 	});
 }
 
+async function closePool() {
+	if (pool) {
+		await pool.end();
+		pool = null;
+	}
+}
+
 module.exports = {
 	isDatabaseConfigured,
 	castVote,
 	getVotesForSkill,
 	getVotesForRoleLevel,
 	getMyVotesForRoleLevel,
+	closePool,
 };

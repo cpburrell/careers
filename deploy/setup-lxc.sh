@@ -12,14 +12,14 @@ NODE_MAJOR=22
 
 echo "==> Installing system packages"
 apt-get update -qq
-apt-get install -y -qq curl ca-certificates gnupg
+apt-get install -y -qq curl ca-certificates gnupg sudo rsync
 
 echo "==> Installing Node.js ${NODE_MAJOR}.x"
 curl -fsSL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | bash -
 apt-get install -y -qq nodejs
 
 echo "==> Creating app user and directory"
-useradd --system --shell /usr/sbin/nologin --home-dir "$APP_DIR" "$APP_USER" || true
+useradd --system --shell /bin/bash --home-dir "$APP_DIR" "$APP_USER" || true
 mkdir -p "$APP_DIR"
 chown "$APP_USER:$APP_USER" "$APP_DIR"
 
@@ -30,7 +30,8 @@ systemctl enable careers
 
 echo "==> Granting careers user passwordless restart of its own service"
 cat > /etc/sudoers.d/careers <<'EOF'
-careers ALL=(ALL) NOPASSWD: /bin/systemctl restart careers, /bin/systemctl status careers
+Defaults:careers !use_pty
+careers ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart careers, /usr/bin/systemctl status careers
 EOF
 chmod 440 /etc/sudoers.d/careers
 

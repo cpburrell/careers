@@ -17,6 +17,7 @@ if [[ -f "$REPO_ROOT/.env.deploy" ]]; then
 fi
 REMOTE="${1:-${DEPLOY_TARGET:-careers@CONTAINER_IP}}"
 APP_DIR=/opt/careers
+SSH_OPTS="-o StrictHostKeyChecking=no"
 
 if [[ "$REMOTE" == *"CONTAINER_IP"* ]]; then
     echo "error: set DEPLOY_TARGET in .env.deploy or pass user@host as argument" >&2
@@ -24,19 +25,20 @@ if [[ "$REMOTE" == *"CONTAINER_IP"* ]]; then
 fi
 
 echo "==> Syncing to $REMOTE:$APP_DIR"
-rsync -az --delete \
+rsync -az --delete -e "ssh $SSH_OPTS" \
     --exclude='.git' \
     --exclude='node_modules' \
     --exclude='.env' \
     --exclude='.env.deploy' \
     --exclude='.pgdata' \
     --exclude='*.log' \
+    --exclude='.ssh' \
     "$REPO_ROOT/" "$REMOTE:$APP_DIR/"
 
 echo "==> Installing production dependencies"
-ssh "$REMOTE" "cd $APP_DIR && npm install --omit=dev"
+ssh $SSH_OPTS "$REMOTE" "cd $APP_DIR && npm install --omit=dev"
 
 echo "==> Restarting service"
-ssh "$REMOTE" "sudo systemctl restart careers"
+ssh $SSH_OPTS "$REMOTE" "sudo systemctl restart careers"
 
-echo "==> Deploy complete — $(ssh "$REMOTE" "sudo systemctl status careers --no-pager -l | head -3")"
+echo "==> Deploy complete — $(ssh $SSH_OPTS "$REMOTE" "systemctl status careers --no-pager -l | head -3")"

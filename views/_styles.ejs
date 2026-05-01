@@ -2,7 +2,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<style>
 		:root {
-			--bg: #0b1220;
+			--bg: #16243e;
 			--panel: rgba(255, 255, 255, 0.06);
 			--panel-2: rgba(255, 255, 255, 0.04);
 			--border: rgba(255, 255, 255, 0.12);
@@ -22,9 +22,9 @@
 			margin: 0;
 			color: var(--text);
 			background:
-				radial-gradient(1200px 700px at 15% 10%, rgba(124, 92, 255, 0.32), transparent 60%),
-				radial-gradient(900px 600px at 80% 15%, rgba(37, 208, 171, 0.22), transparent 55%),
-				radial-gradient(800px 650px at 50% 90%, rgba(255, 77, 109, 0.14), transparent 55%),
+				radial-gradient(1200px 700px at 15% 10%, rgba(124, 92, 255, 0.45), transparent 60%),
+				radial-gradient(900px 600px at 80% 15%, rgba(37, 208, 171, 0.32), transparent 55%),
+				radial-gradient(800px 650px at 50% 90%, rgba(255, 77, 109, 0.22), transparent 55%),
 				var(--bg);
 			font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 			line-height: 1.5;
@@ -39,17 +39,33 @@
 			padding: 26px 18px 44px;
 		}
 
+		.topbar, .hero, .card {
+			position: relative;
+			border: none;
+		}
+		.topbar::before, .hero::before, .card::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 2px;
+			background: linear-gradient(to right, rgba(124, 92, 255, 0.85), rgba(37, 208, 171, 0.65));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			pointer-events: none;
+		}
+
 		.topbar {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			gap: 12px;
 			padding: 14px 16px;
-			border: 1px solid var(--border);
-			background: linear-gradient(180deg, var(--panel), var(--panel-2));
+			background: linear-gradient(160deg, rgba(48, 64, 108, 0.82) 0%, rgba(30, 44, 80, 0.78) 100%);
 			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			backdrop-filter: blur(10px);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.11);
+			backdrop-filter: blur(16px);
 		}
 
 		.brand {
@@ -88,9 +104,10 @@
 		.hero {
 			margin: 18px 0 14px;
 			padding: 18px 16px;
+			background: linear-gradient(160deg, rgba(48, 64, 108, 0.82) 0%, rgba(30, 44, 80, 0.78) 100%);
 			border-radius: var(--radius);
-			border: 1px solid var(--border);
-			background: rgba(255, 255, 255, 0.05);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.11);
+			backdrop-filter: blur(16px);
 		}
 		.hero h1 {
 			margin: 0;
@@ -104,24 +121,10 @@
 		}
 
 		.card {
-			position: relative;
-			border: none;
-			background: linear-gradient(160deg, rgba(28, 38, 68, 0.90) 0%, rgba(12, 20, 44, 0.88) 100%);
+			background: linear-gradient(160deg, rgba(48, 64, 108, 0.82) 0%, rgba(30, 44, 80, 0.78) 100%);
 			border-radius: var(--radius);
 			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.11);
 			backdrop-filter: blur(16px);
-		}
-		.card::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			border-radius: inherit;
-			padding: 2px;
-			background: linear-gradient(to right, rgba(124, 92, 255, 0.85), rgba(37, 208, 171, 0.65));
-			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-			-webkit-mask-composite: xor;
-			mask-composite: exclude;
-			pointer-events: none;
 		}
 		.card__body { padding: 14px 14px; }
 

@@ -81,6 +81,10 @@ Copy `.env.example` to `.env`. Key variables:
 
 Schema lives in `deploy/schema.sql`. Apply manually to a running MariaDB instance. The MariaDB server must have `skip-name-resolve` set and `bind-address=0.0.0.0` for remote connections. Voting feature is disabled automatically when `MARIADB_HOST` is unset.
 
+## Versioning
+
+Version follows `MAJOR.MINOR.MERGENUMBER` in `package.json`. Bump the patch (merge number) manually when merging a feature branch into `develop`; bump minor/major for intentional breaking or milestone changes. The current version is exposed at `GET /health`.
+
 ## Deployment
 
 The app runs on an LXC container at `careers.cburrell.com` (192.168.2.42), Debian 12, Node 22. Deploy with:

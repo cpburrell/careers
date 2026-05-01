@@ -1,6 +1,6 @@
 {
   "name": "careers",
-  "version": "1.0.0",
+  "version": "1.0.11",
   "description": "An application to process and display career ladders and options, based on the SFIA framework",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,9 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.18.2",
+    "express-rate-limit": "^8.4.1",
     "fs": "^0.0.1-security",
+    "helmet": "^8.1.0",
     "mysql2": "^3.22.3",
     "node-json2html": "^3.2.2",
     "nodemon": "^3.1.0",

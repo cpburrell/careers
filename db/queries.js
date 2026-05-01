@@ -37,13 +37,13 @@ async function withClient(fn) {
 	}
 }
 
-async function castVote({ roleId, pathwayId, level, skillId, suggestedLevel, voterToken }) {
+async function castVote({ roleId, pathwayId, level, skillId, suggestedLevel, voterToken, ipAddress }) {
 	return withClient(async (conn) => {
 		await conn.query(
-			`INSERT INTO votes (role_id, pathway_id, level, skill_id, suggested_level, voter_token)
-			 VALUES (?, ?, ?, ?, ?, ?)
-			 ON DUPLICATE KEY UPDATE suggested_level = VALUES(suggested_level), updated_at = NOW()`,
-			[roleId, pathwayId, level, skillId, suggestedLevel, voterToken]
+			`INSERT INTO votes (role_id, pathway_id, level, skill_id, suggested_level, voter_token, ip_address)
+			 VALUES (?, ?, ?, ?, ?, ?, ?)
+			 ON DUPLICATE KEY UPDATE suggested_level = VALUES(suggested_level), ip_address = VALUES(ip_address), updated_at = NOW()`,
+			[roleId, pathwayId, level, skillId, suggestedLevel, voterToken, ipAddress ?? null]
 		);
 	});
 }
@@ -88,13 +88,13 @@ async function getMyVotesForRoleLevel({ roleId, pathwayId, level, voterToken }) 
 	});
 }
 
-async function castPresenceVote({ roleId, pathwayId, level, skillId, voteType, suggestedLevel, voterToken }) {
+async function castPresenceVote({ roleId, pathwayId, level, skillId, voteType, suggestedLevel, voterToken, ipAddress }) {
 	return withClient(async (conn) => {
 		await conn.query(
-			`INSERT INTO skill_presence_votes (role_id, pathway_id, level, skill_id, vote_type, suggested_level, voter_token)
-			 VALUES (?, ?, ?, ?, ?, ?, ?)
-			 ON DUPLICATE KEY UPDATE vote_type = VALUES(vote_type), suggested_level = VALUES(suggested_level), updated_at = NOW()`,
-			[roleId, pathwayId, level, skillId, voteType, suggestedLevel ?? null, voterToken]
+			`INSERT INTO skill_presence_votes (role_id, pathway_id, level, skill_id, vote_type, suggested_level, voter_token, ip_address)
+			 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+			 ON DUPLICATE KEY UPDATE vote_type = VALUES(vote_type), suggested_level = VALUES(suggested_level), ip_address = VALUES(ip_address), updated_at = NOW()`,
+			[roleId, pathwayId, level, skillId, voteType, suggestedLevel ?? null, voterToken, ipAddress ?? null]
 		);
 	});
 }

@@ -12,9 +12,10 @@ CREATE TABLE IF NOT EXISTS votes (
 	level           TINYINT     NOT NULL,
 	skill_id        VARCHAR(20) NOT NULL,
 	suggested_level TINYINT     NOT NULL,
-	voter_token     VARCHAR(36) NOT NULL,
-	created_at      DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	updated_at      DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	voter_token     VARCHAR(36)  NOT NULL,
+	ip_address      VARCHAR(45)  NULL,
+	created_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),
 	UNIQUE KEY votes_unique_voter (role_id, pathway_id, level, skill_id, voter_token)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -28,6 +29,7 @@ CREATE TABLE IF NOT EXISTS skill_presence_votes (
 	vote_type       ENUM('add','remove') NOT NULL,
 	suggested_level TINYINT      NULL,
 	voter_token     VARCHAR(36)  NOT NULL,
+	ip_address      VARCHAR(45)  NULL,
 	created_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),

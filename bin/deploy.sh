@@ -25,7 +25,7 @@ if [[ "$REMOTE" == *"CONTAINER_IP"* ]]; then
 fi
 
 echo "==> Syncing to $REMOTE:$APP_DIR"
-rsync -az --delete -e "ssh $SSH_OPTS" \
+rsync -az --delete --filter='protect .npm' -e "ssh $SSH_OPTS" \
     --exclude='.git' \
     --exclude='node_modules' \
     --exclude='.env' \

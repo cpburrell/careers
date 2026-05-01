@@ -52,6 +52,7 @@
 											<th>Skill</th>
 											<th>Required Level</th>
 											<th>Description</th>
+											<% if (votingAvailable) { %><th>Community</th><% } %>
 										</tr>
 									</thead>
 									<tbody>
@@ -59,6 +60,8 @@
 											<% const competency = entry.required_level %>
 											<% let skillLevel = (skill.levels || []).find(l => l.level == competency) %>
 											<% let lev = (skills.levels || []).find(l => l.level == competency) %>
+											<% const skillVotes = votesBySkill[skill.id] || {} %>
+											<% const myVote = myVotes[skill.id] %>
 											<tr>
 												<td>
 													<div class="item-title">
@@ -86,6 +89,29 @@
 														<span style="color: var(--faint);">No skill-level description available.</span>
 													<% } %>
 												</td>
+																			<% if (votingAvailable) { %>
+												<td>
+													<% const voteLevels = Object.keys(skillVotes).map(Number).sort((a,b) => a-b) %>
+													<% if (voteLevels.length > 0) { %>
+														<div class="vote-bars">
+															<% voteLevels.forEach(lvl => { %>
+																<span class="vote-bar<%= myVote == lvl ? ' vote-bar--mine' : '' %>">
+																	L<%= lvl %> <span class="vote-bar__count">×<%= skillVotes[lvl] %></span>
+																</span>
+															<% }) %>
+														</div>
+													<% } %>
+													<form class="vote-form" method="POST" action="/roles/<%= role.id %>/pathway/<%= pathway.id %>/level/<%= levelId %>/vote">
+														<input type="hidden" name="skill_id" value="<%= skill.id %>">
+														<select name="suggested_level" aria-label="Suggested level for <%= skill.name %>">
+															<% for (let lvl = 1; lvl <= 7; lvl++) { %>
+																<option value="<%= lvl %>" <%= myVote == lvl ? 'selected' : '' %>>Level <%= lvl %></option>
+															<% } %>
+														</select>
+														<button type="submit"><%= myVote ? 'Update' : 'Vote' %></button>
+													</form>
+												</td>
+												<% } %>
 											</tr>
 										<% }) %>
 									</tbody>

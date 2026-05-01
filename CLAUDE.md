@@ -12,13 +12,6 @@ A Node.js/Express + EJS web app for browsing SFIA-based career roles and skill r
 npm install          # Install dependencies
 npm start            # Run app at http://localhost:3000 (nodemon + --inspect always on)
 npm test             # Run Jest test suite (30s timeout; parses CSV)
-
-# Docker (app + Postgres)
-docker compose up -d --build    # Start everything
-docker compose up -d postgres   # DB only
-docker compose down
-
-bin/docker-reset-db.sh          # Wipe .pgdata/ and reinitialize DB
 ```
 
 Run a single test file:
@@ -42,9 +35,8 @@ python3 scripts/generate_sfia_ai_descriptions.py
 
 **Data flow:** `index.js` → `lib/dataStore.js` (loads + indexes all data) → routes query indexes → EJS templates render.
 
-**`lib/dataStore.js`** is the core — it loads all data at startup, builds in-memory indexes, and exposes them to routes. Two data sources are supported via `CAREERS_DATA_SOURCE` env var:
-- `file` (default): reads `roles.json` and `sfia-8_en_220221.xlsx - Skills.csv`
-- `db`: reads from Postgres via the `careers` schema
+**`lib/dataStore.js`** is the core — it loads all data at startup, builds in-memory indexes, and exposes them to routes. Data loading always uses the `file` source:
+- reads `roles.json` and `sfia-8_en_220221.xlsx - Skills.csv`
 
 `loadAll()` is called at startup and runs `validateData({ strict: true })` after loading — this will crash the server if `roles.json` references unknown skill IDs or has other integrity errors. Validation is strict by design.
 
@@ -57,7 +49,7 @@ Key indexes built at startup:
 
 **AI descriptions overlay (`sfia_ai_descriptions.json`):** When a SFIA skill is missing a level description in the CSV, the app falls back to entries in this file. Descriptions prefixed with `"AI created:"` are flagged as AI-generated (`is_ai: true`) and displayed differently in the UI. Internally, parsed SFIA CSV rows have a `__ai` object (`{ "3": true, "5": true }`) tracking which levels used AI-generated text.
 
-**Voting feature:** On role-level detail pages, users can suggest a different SFIA required level for each skill. Votes are stored in `careers.votes` via `db/queries.js`. The feature gracefully degrades (hidden) when DB is unavailable or unconfigured — `isDatabaseConfigured()` guards all DB calls. A persistent `voter_token` cookie issued on first visit provides anonymous voter identity.
+**Voting feature:** On role-level detail pages, users can suggest a different SFIA required level for each skill, and vote to add/remove skills entirely. Votes are stored in MariaDB (`careers.votes` and `careers.skill_presence_votes`) via `db/queries.js`. The feature gracefully degrades (hidden) when MariaDB is unavailable or unconfigured — `isDatabaseConfigured()` guards all DB calls. A persistent `voter_token` cookie issued on first visit provides anonymous voter identity.
 
 **Data model:**
 - `roles.json` — roles with pathways (`ic`/`lm`) × levels (1–7); each level has a `title` and `selected_skills` array of `{skill_id, required_level}`
@@ -69,7 +61,7 @@ Key indexes built at startup:
 - `/skills`, `/skills/:skillId/`, `/skills/:skillId/level/:levelId`
 - `/sfia/`, `/sfia/:code/level/:levelId`
 
-**`db/queries.js`** is lazy-loaded — `pg` is only `require()`d when a DB function is actually called, so the `file` data source works without `pg` installed.
+**`db/queries.js`** is lazy-loaded — `mysql2` is only `require()`d when a DB function is actually called, so the app works without MariaDB configured.
 
 ## Tests
 
@@ -82,10 +74,17 @@ Follows git-flow. The `master` branch is production-only (releases/hotfixes). Da
 ## Environment
 
 Copy `.env.example` to `.env`. Key variables:
-- `CAREERS_DATA_SOURCE` — `file` (default) or `db`
-- `PGHOST`, `PGPORT`, `PGUSER`, `PGPASSWORD`, `PGDATABASE` (or `DATABASE_URL`) — Postgres connection
-- `APP_DEBUG_PORT` — inspector port for Docker debug mode (default `9229`)
+- `MARIADB_HOST`, `MARIADB_PORT`, `MARIADB_USER`, `MARIADB_PASSWORD`, `MARIADB_DATABASE` — MariaDB connection (voting feature only)
+- `MARIADB_SSL` — set to `true` to enable SSL (recommended for remote servers)
 
-## Postgres dev notes
+## MariaDB dev notes
 
-DB schema lives in `db/`; auto-initializes from empty `.pgdata/` on first `docker compose up`. To force re-init, delete `.pgdata/` and restart. The `db` data source path is lazy-loaded so `pg` is not required when running in file mode.
+Schema lives in `deploy/schema.sql`. Apply manually to a running MariaDB instance. The MariaDB server must have `skip-name-resolve` set and `bind-address=0.0.0.0` for remote connections. Voting feature is disabled automatically when `MARIADB_HOST` is unset.
+
+## Deployment
+
+The app runs on an LXC container at `careers.cburrell.com` (192.168.2.42), Debian 12, Node 22. Deploy with:
+```bash
+bin/deploy.sh    # rsync + npm install + systemctl restart (~30s)
+```
+Provision a fresh container with `bin/provision-lxc.sh`.

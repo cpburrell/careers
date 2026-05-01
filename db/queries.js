@@ -88,6 +88,53 @@ async function getMyVotesForRoleLevel({ roleId, pathwayId, level, voterToken }) 
 	});
 }
 
+async function castPresenceVote({ roleId, pathwayId, level, skillId, voteType, suggestedLevel, voterToken }) {
+	return withClient(async (conn) => {
+		await conn.query(
+			`INSERT INTO skill_presence_votes (role_id, pathway_id, level, skill_id, vote_type, suggested_level, voter_token)
+			 VALUES (?, ?, ?, ?, ?, ?, ?)
+			 ON DUPLICATE KEY UPDATE vote_type = VALUES(vote_type), suggested_level = VALUES(suggested_level), updated_at = NOW()`,
+			[roleId, pathwayId, level, skillId, voteType, suggestedLevel ?? null, voterToken]
+		);
+	});
+}
+
+async function deletePresenceVote({ roleId, pathwayId, level, skillId, voterToken }) {
+	return withClient(async (conn) => {
+		await conn.query(
+			`DELETE FROM skill_presence_votes
+			 WHERE role_id = ? AND pathway_id = ? AND level = ? AND skill_id = ? AND voter_token = ?`,
+			[roleId, pathwayId, level, skillId, voterToken]
+		);
+	});
+}
+
+async function getPresenceVotesForRoleLevel({ roleId, pathwayId, level }) {
+	return withClient(async (conn) => {
+		const [rows] = await conn.query(
+			`SELECT skill_id, vote_type, suggested_level, COUNT(*) AS votes
+			 FROM skill_presence_votes
+			 WHERE role_id = ? AND pathway_id = ? AND level = ?
+			 GROUP BY skill_id, vote_type, suggested_level
+			 ORDER BY skill_id, vote_type`,
+			[roleId, pathwayId, level]
+		);
+		return rows.map((r) => ({ ...r, votes: Number(r.votes) }));
+	});
+}
+
+async function getMyPresenceVotesForRoleLevel({ roleId, pathwayId, level, voterToken }) {
+	return withClient(async (conn) => {
+		const [rows] = await conn.query(
+			`SELECT skill_id, vote_type, suggested_level
+			 FROM skill_presence_votes
+			 WHERE role_id = ? AND pathway_id = ? AND level = ? AND voter_token = ?`,
+			[roleId, pathwayId, level, voterToken]
+		);
+		return Object.fromEntries(rows.map((r) => [r.skill_id, { voteType: r.vote_type, suggestedLevel: r.suggested_level }]));
+	});
+}
+
 async function closePool() {
 	if (pool) {
 		await pool.end();
@@ -101,5 +148,9 @@ module.exports = {
 	getVotesForSkill,
 	getVotesForRoleLevel,
 	getMyVotesForRoleLevel,
+	castPresenceVote,
+	deletePresenceVote,
+	getPresenceVotesForRoleLevel,
+	getMyPresenceVotesForRoleLevel,
 	closePool,
 };

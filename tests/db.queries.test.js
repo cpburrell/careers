@@ -126,3 +126,68 @@ describeIfDb('MariaDB integration (requires MARIADB_HOST)', () => {
 		}
 	});
 });
+
+describeIfDb('MariaDB presence votes integration (requires MARIADB_HOST)', () => {
+	jest.setTimeout(15_000);
+
+	const ctx = {
+		roleId: 'test-role',
+		pathwayId: 'ic',
+		level: 1,
+		skillId: 'TEST-PRESENCE',
+		voterToken: 'jest-presence-' + Date.now(),
+	};
+
+	// Clean up any leftover presence votes from previous runs before starting
+	beforeAll(async () => {
+		await queries.deletePresenceVote({ roleId: ctx.roleId, pathwayId: ctx.pathwayId, level: ctx.level, skillId: ctx.skillId, voterToken: ctx.voterToken });
+	});
+
+	test('castPresenceVote() inserts a remove vote', async () => {
+		await expect(
+			queries.castPresenceVote({ ...ctx, voteType: 'remove', suggestedLevel: null })
+		).resolves.toBeUndefined();
+	});
+
+	test('getPresenceVotesForRoleLevel() includes the remove vote', async () => {
+		const rows = await queries.getPresenceVotesForRoleLevel({ roleId: ctx.roleId, pathwayId: ctx.pathwayId, level: ctx.level });
+		expect(Array.isArray(rows)).toBe(true);
+		const mine = rows.find(r => r.skill_id === ctx.skillId && r.vote_type === 'remove');
+		expect(mine).toBeDefined();
+		expect(typeof mine.votes).toBe('number');
+		expect(mine.votes).toBeGreaterThan(0);
+	});
+
+	test('getMyPresenceVotesForRoleLevel() returns remove vote keyed by skill_id', async () => {
+		const result = await queries.getMyPresenceVotesForRoleLevel({ ...ctx });
+		expect(result[ctx.skillId]).toBeDefined();
+		expect(result[ctx.skillId].voteType).toBe('remove');
+	});
+
+	test('deletePresenceVote() removes the vote', async () => {
+		await queries.deletePresenceVote({ roleId: ctx.roleId, pathwayId: ctx.pathwayId, level: ctx.level, skillId: ctx.skillId, voterToken: ctx.voterToken });
+		const result = await queries.getMyPresenceVotesForRoleLevel({ ...ctx });
+		expect(result[ctx.skillId]).toBeUndefined();
+	});
+
+	test('castPresenceVote() inserts an add vote with suggested level', async () => {
+		await expect(
+			queries.castPresenceVote({ ...ctx, voteType: 'add', suggestedLevel: 3 })
+		).resolves.toBeUndefined();
+	});
+
+	test('getPresenceVotesForRoleLevel() includes the add vote with suggested_level', async () => {
+		const rows = await queries.getPresenceVotesForRoleLevel({ roleId: ctx.roleId, pathwayId: ctx.pathwayId, level: ctx.level });
+		const mine = rows.find(r => r.skill_id === ctx.skillId && r.vote_type === 'add');
+		expect(mine).toBeDefined();
+		expect(mine.suggested_level).toBe(3);
+		expect(typeof mine.votes).toBe('number');
+	});
+
+	test('castPresenceVote() upserts an add vote (changes suggested level)', async () => {
+		await queries.castPresenceVote({ ...ctx, voteType: 'add', suggestedLevel: 5 });
+		const result = await queries.getMyPresenceVotesForRoleLevel({ ...ctx });
+		expect(result[ctx.skillId].voteType).toBe('add');
+		expect(result[ctx.skillId].suggestedLevel).toBe(5);
+	});
+});

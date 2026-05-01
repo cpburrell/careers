@@ -20,7 +20,7 @@ describe('app routes', () => {
 	test('GET /', async () => {
 		const res = await request(app).get('/');
 		expect(res.status).toBe(200);
-		expect(res.text).toContain('Hello World!');
+		expect(res.text).toContain('Career pathways for tech professionals');
 	});
 
 	test('GET /roles', async () => {

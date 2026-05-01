@@ -36,7 +36,7 @@ describe('isDatabaseConfigured()', () => {
 	});
 
 	test('returns true when MARIADB_HOST is set', () => {
-		process.env.MARIADB_HOST = '192.168.2.21';
+		process.env.MARIADB_HOST = 'mariadb.cburrell.com';
 		expect(queries.isDatabaseConfigured()).toBe(true);
 	});
 

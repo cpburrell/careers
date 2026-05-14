@@ -1,0 +1,19 @@
+[Unit]
+Description=Careers app (SFIA role browser)
+After=network.target
+
+[Service]
+Type=simple
+User=careers
+Group=careers
+WorkingDirectory=/opt/careers
+EnvironmentFile=/opt/careers/.env
+ExecStart=/usr/bin/node index.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=careers
+
+[Install]
+WantedBy=multi-user.target

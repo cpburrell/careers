@@ -1,4 +1,17 @@
 const express = require('express');
+const rateLimit = require('express-rate-limit');
+const {
+	castVote, getVotesForRoleLevel, getMyVotesForRoleLevel,
+	castPresenceVote, deletePresenceVote, getPresenceVotesForRoleLevel, getMyPresenceVotesForRoleLevel,
+	isDatabaseConfigured,
+} = require('../db/queries');
+
+const voteRateLimit = rateLimit({
+	windowMs: 15 * 60 * 1000,
+	max: 60,
+	standardHeaders: true,
+	legacyHeaders: false,
+});
 
 function createRolesRouter(dataStore) {
 	const router = express.Router();
@@ -7,7 +20,7 @@ function createRolesRouter(dataStore) {
 		res.render('roles', { roles: dataStore.getRoles(), skills: dataStore.getSkills() });
 	});
 
-	router.get('/:roleId/pathway/:pathwayId/level/:levelId', (req, res) => {
+	router.get('/:roleId/pathway/:pathwayId/level/:levelId', async (req, res) => {
 		const { roleId, pathwayId, levelId } = req.params;
 
 		const roles = dataStore.getRoles();
@@ -26,16 +39,117 @@ function createRolesRouter(dataStore) {
 			return res.status(404).send('Level not found');
 		}
 
+		// Fetch vote data — gracefully degrade if DB is unavailable or unconfigured
+		let votesBySkill = {};
+		let myVotes = {};
+		let presenceVotesBySkill = {};
+		let myPresenceVotes = {};
+		let votingAvailable = false;
+		try {
+			if (!isDatabaseConfigured()) throw new Error('No DB config');
+			const voterToken = req.cookies.voter_token;
+			const levelNum = Number(levelId);
+			const [allVotes, mine, allPresence, myPresence] = await Promise.all([
+				getVotesForRoleLevel({ roleId, pathwayId, level: levelNum }),
+				getMyVotesForRoleLevel({ roleId, pathwayId, level: levelNum, voterToken }),
+				getPresenceVotesForRoleLevel({ roleId, pathwayId, level: levelNum }),
+				getMyPresenceVotesForRoleLevel({ roleId, pathwayId, level: levelNum, voterToken }),
+			]);
+			for (const row of allVotes) {
+				if (!votesBySkill[row.skill_id]) votesBySkill[row.skill_id] = {};
+				votesBySkill[row.skill_id][row.suggested_level] = row.votes;
+			}
+			for (const row of allPresence) {
+				if (!presenceVotesBySkill[row.skill_id]) presenceVotesBySkill[row.skill_id] = { remove: 0, add: {} };
+				if (row.vote_type === 'remove') {
+					presenceVotesBySkill[row.skill_id].remove += row.votes;
+				} else {
+					presenceVotesBySkill[row.skill_id].add[row.suggested_level] = row.votes;
+				}
+			}
+			myVotes = mine;
+			myPresenceVotes = myPresence;
+			votingAvailable = true;
+		} catch (_err) {
+			// DB not available — voting UI hidden
+		}
+
 		res.render('roleDetail', {
 			skills: dataStore.getSkills(),
 			role,
 			pathway,
 			levelId,
+			votesBySkill,
+			myVotes,
+			presenceVotesBySkill,
+			myPresenceVotes,
+			votingAvailable,
 		});
+	});
+
+	router.post('/:roleId/pathway/:pathwayId/level/:levelId/presence-vote', voteRateLimit, async (req, res) => {
+		const { roleId, pathwayId, levelId } = req.params;
+		const { skill_id, vote_type, suggested_level } = req.body;
+		const voterToken = req.cookies.voter_token;
+
+		if (!skill_id || !['add', 'remove'].includes(vote_type)) {
+			return res.status(400).send('Invalid presence vote');
+		}
+		const suggestedLevelNum = vote_type === 'add' ? Number(suggested_level) : null;
+		if (vote_type === 'add' && (!Number.isInteger(suggestedLevelNum) || suggestedLevelNum < 1 || suggestedLevelNum > 7)) {
+			return res.status(400).send('Invalid suggested level');
+		}
+
+		const ipAddress = req.ip;
+		try {
+			if (vote_type === 'remove') {
+				// Toggle: if voter already has a remove vote for this skill, undo it
+				const myPresence = await getMyPresenceVotesForRoleLevel({
+					roleId, pathwayId, level: Number(levelId), voterToken,
+				});
+				if (myPresence[skill_id]?.voteType === 'remove') {
+					await deletePresenceVote({ roleId, pathwayId, level: Number(levelId), skillId: skill_id, voterToken });
+				} else {
+					await castPresenceVote({ roleId, pathwayId, level: Number(levelId), skillId: skill_id, voteType: 'remove', suggestedLevel: null, voterToken, ipAddress });
+				}
+			} else {
+				await castPresenceVote({ roleId, pathwayId, level: Number(levelId), skillId: skill_id, voteType: 'add', suggestedLevel: suggestedLevelNum, voterToken, ipAddress });
+			}
+		} catch (_err) {
+			return res.status(500).send('Vote could not be saved');
+		}
+
+		res.redirect(`/roles/${roleId}/pathway/${pathwayId}/level/${levelId}`);
+	});
+
+	router.post('/:roleId/pathway/:pathwayId/level/:levelId/vote', voteRateLimit, async (req, res) => {
+		const { roleId, pathwayId, levelId } = req.params;
+		const { skill_id, suggested_level } = req.body;
+		const voterToken = req.cookies.voter_token;
+
+		const suggestedLevelNum = Number(suggested_level);
+		if (!skill_id || !Number.isInteger(suggestedLevelNum) || suggestedLevelNum < 1 || suggestedLevelNum > 7) {
+			return res.status(400).send('Invalid vote');
+		}
+
+		try {
+			await castVote({
+				roleId,
+				pathwayId,
+				level: Number(levelId),
+				skillId: skill_id,
+				suggestedLevel: suggestedLevelNum,
+				voterToken,
+				ipAddress: req.ip,
+			});
+		} catch (err) {
+			return res.status(500).send('Vote could not be saved');
+		}
+
+		res.redirect(`/roles/${roleId}/pathway/${pathwayId}/level/${levelId}`);
 	});
 
 	return router;
 }
 
 module.exports = createRolesRouter;
-

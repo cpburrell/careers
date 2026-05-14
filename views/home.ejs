@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Careers — SFIA role explorer</title>
+	<%- include('_styles') %>
+	<style>
+		.home-grid {
+			display: grid;
+			gap: 12px;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			margin-top: 14px;
+		}
+		.home-card {
+			background: linear-gradient(160deg, rgba(48, 64, 108, 0.82) 0%, rgba(30, 44, 80, 0.78) 100%);
+			border-radius: var(--radius);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.11);
+			backdrop-filter: blur(16px);
+			padding: 20px;
+			position: relative;
+		}
+		.home-card::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 2px;
+			background: linear-gradient(to right, rgba(124, 92, 255, 0.85), rgba(37, 208, 171, 0.65));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			pointer-events: none;
+		}
+		.home-card__icon {
+			font-size: 28px;
+			margin-bottom: 10px;
+			line-height: 1;
+		}
+		.home-card__title {
+			font-size: 16px;
+			font-weight: 700;
+			margin: 0 0 6px;
+		}
+		.home-card__body {
+			color: var(--muted);
+			font-size: 13px;
+			margin: 0 0 16px;
+			line-height: 1.6;
+		}
+		.home-card__link {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 7px 16px;
+			border-radius: 999px;
+			border: 1px solid rgba(124, 92, 255, 0.5);
+			background: rgba(124, 92, 255, 0.18);
+			color: rgba(236, 233, 255, 0.95);
+			font-size: 13px;
+			font-weight: 500;
+			text-decoration: none;
+		}
+		.home-card__link:hover {
+			background: rgba(124, 92, 255, 0.30);
+			text-decoration: none;
+		}
+		.home-card__link--teal {
+			border-color: rgba(37, 208, 171, 0.5);
+			background: rgba(37, 208, 171, 0.12);
+			color: rgba(219, 255, 246, 0.95);
+		}
+		.home-card__link--teal:hover { background: rgba(37, 208, 171, 0.22); }
+
+		.explainer {
+			background: linear-gradient(160deg, rgba(48, 64, 108, 0.82) 0%, rgba(30, 44, 80, 0.78) 100%);
+			border-radius: var(--radius);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.11);
+			backdrop-filter: blur(16px);
+			padding: 22px 24px;
+			margin-top: 14px;
+			position: relative;
+		}
+		.explainer::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 2px;
+			background: linear-gradient(to right, rgba(124, 92, 255, 0.85), rgba(37, 208, 171, 0.65));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			pointer-events: none;
+		}
+		.explainer h2 {
+			margin: 0 0 12px;
+			font-size: 15px;
+			font-weight: 700;
+			color: var(--text);
+		}
+		.explainer p {
+			margin: 0 0 10px;
+			color: var(--muted);
+			font-size: 13px;
+			max-width: 80ch;
+			line-height: 1.65;
+		}
+		.explainer p:last-child { margin-bottom: 0; }
+		.explainer strong { color: var(--text); font-weight: 600; }
+
+		.pill-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin: 12px 0;
+		}
+		.pill {
+			padding: 4px 12px;
+			border-radius: 999px;
+			font-size: 12px;
+			border: 1px solid rgba(255, 255, 255, 0.14);
+			background: rgba(255, 255, 255, 0.06);
+			color: var(--muted);
+		}
+		.pill--purple { border-color: rgba(124, 92, 255, 0.5); color: rgba(236, 233, 255, 0.95); background: rgba(124, 92, 255, 0.12); }
+		.pill--teal   { border-color: rgba(37, 208, 171, 0.5);  color: rgba(219, 255, 246, 0.95);  background: rgba(37, 208, 171, 0.10); }
+
+		.example {
+			background: linear-gradient(160deg, rgba(48, 64, 108, 0.82) 0%, rgba(30, 44, 80, 0.78) 100%);
+			border-radius: var(--radius);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.11);
+			backdrop-filter: blur(16px);
+			padding: 22px 24px;
+			margin-top: 14px;
+			position: relative;
+		}
+		.example::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 2px;
+			background: linear-gradient(to right, rgba(124, 92, 255, 0.85), rgba(37, 208, 171, 0.65));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			pointer-events: none;
+		}
+		.example__header {
+			display: flex;
+			align-items: baseline;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-bottom: 6px;
+		}
+		.example__label {
+			font-size: 11px;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: rgba(124, 92, 255, 0.9);
+		}
+		.example__title {
+			font-size: 15px;
+			font-weight: 700;
+			color: var(--text);
+			margin: 0;
+		}
+		.example__intro {
+			color: var(--muted);
+			font-size: 13px;
+			margin: 0 0 14px;
+			line-height: 1.6;
+			max-width: 72ch;
+		}
+		.example-skills {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			gap: 8px;
+			margin-bottom: 16px;
+		}
+		.example-skill {
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.09);
+			border-radius: 8px;
+			padding: 10px 12px;
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+		.example-skill__name {
+			font-size: 13px;
+			font-weight: 600;
+			color: var(--text);
+		}
+		.example-skill__level {
+			font-size: 12px;
+			color: var(--muted);
+		}
+		.example-skill__level strong {
+			color: rgba(37, 208, 171, 0.95);
+			font-weight: 600;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<%- include('_nav') %>
+
+		<section class="hero">
+			<h1>Career pathways for tech professionals</h1>
+			<p>Explore role definitions, required skill levels, and career progression — structured around the SFIA framework. See what's expected at each level, across both individual contributor and management tracks.</p>
+		</section>
+
+		<section class="explainer">
+			<h2>What is this?</h2>
+			<p>
+				<strong>SFIA</strong> (Skills Framework for the Information Age) is a globally recognised competency framework for technology professionals. It defines around 120 skills across areas like software development, data management, security, and leadership — each described at up to seven levels of responsibility.
+			</p>
+			<p>
+				This tool maps those skills onto specific roles, so you can answer questions like: <em>what does a Senior Engineer actually need to be able to do?</em> or <em>how does the expectation change when I move into a line management track?</em>
+			</p>
+			<h2>How to use it</h2>
+			<p>
+				Start with <strong>Roles</strong> — pick a role and a level (1 = entry, 7 = executive) to see which SFIA skills are required and at what proficiency. Each role has two pathways:
+			</p>
+			<div class="pill-row">
+				<span class="pill pill--purple">IC — Individual Contributor</span>
+				<span class="pill pill--teal">LM — Line Manager</span>
+			</div>
+			<p>
+				If you want to understand a specific skill in depth, browse <strong>Skills</strong> to see its description at every SFIA level. The <strong>SFIA CSV</strong> view shows the raw framework data if you need it.
+			</p>
+			<p>
+				On any role–level page you can <strong>vote</strong> to suggest a different required level for a skill, or propose adding or removing a skill entirely. Votes are anonymous and help refine the role definitions over time.
+			</p>
+		</section>
+
+		<% if (exampleRole && exampleLevelData) { %>
+		<section class="example">
+			<div class="example__header">
+				<span class="example__label">Worked example</span>
+			</div>
+			<h2 class="example__title"><%= exampleLevelData.title %></h2>
+			<p class="example__intro">
+				Here's what the <strong><%= exampleLevelData.title %></strong> role (IC pathway, Level 3) requires.
+				Each card below is a SFIA skill — the number shows the required proficiency level for this role.
+				Click the link to explore the full role page, then try voting to suggest a different level.
+			</p>
+			<div class="example-skills">
+				<% exampleSkills.forEach(function(s) { %>
+				<div class="example-skill">
+					<div class="example-skill__name"><%= s.skill.name %></div>
+					<div class="example-skill__level">Level <%= s.required_level %> — <strong><%= s.level_name %></strong></div>
+				</div>
+				<% }) %>
+			</div>
+			<a href="/roles/se/pathway/ic/level/3" class="home-card__link home-card__link--teal">View this role →</a>
+		</section>
+		<% } %>
+
+		<div class="home-grid">
+			<div class="home-card">
+				<div class="home-card__icon">🗂</div>
+				<div class="home-card__title">Roles</div>
+				<div class="home-card__body">Browse all roles across IC and LM pathways. Select a level to see exactly which skills are required and at what depth.</div>
+				<a href="/roles" class="home-card__link">Browse roles →</a>
+			</div>
+			<div class="home-card">
+				<div class="home-card__icon">🔬</div>
+				<div class="home-card__title">Skills</div>
+				<div class="home-card__body">Explore individual SFIA skills — what each one means and how the expectation scales from level 1 through 7.</div>
+				<a href="/skills" class="home-card__link home-card__link--teal">Browse skills →</a>
+			</div>
+			<div class="home-card">
+				<div class="home-card__icon">📄</div>
+				<div class="home-card__title">SFIA framework</div>
+				<div class="home-card__body">View the underlying SFIA CSV data — all skill categories, codes, and level descriptions as defined in SFIA 8.</div>
+				<a href="/sfia/" class="home-card__link">View SFIA data →</a>
+			</div>
+		</div>
+
+		<%- include('_footer') %>
+	</div>
+</body>
+</html>

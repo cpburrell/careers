@@ -20,7 +20,7 @@ describe('app routes', () => {
 	test('GET /', async () => {
 		const res = await request(app).get('/');
 		expect(res.status).toBe(200);
-		expect(res.text).toContain('Hello World!');
+		expect(res.text).toContain('Career pathways for tech professionals');
 	});
 
 	test('GET /roles', async () => {
@@ -68,12 +68,12 @@ describe('app routes', () => {
 		expect(aiLevel).toBeTruthy();
 
 		expect(aiLevel.full_description).toMatch(/^AI created:/);
-		expect(aiLevel.full_description).not.toMatch(/^AI created:.*Level\\s+\\d+/);
+		expect(aiLevel.full_description).not.toMatch(/^AI created:.*Level\s+\d+/);
 
 		const res = await request(app).get(`/skills/${skillWithAi.id}/level/${aiLevel.level}`);
 		expect(res.status).toBe(200);
 		expect(res.text).toContain('badge--ai');
-		expect(res.text).not.toMatch(/AI created:.*Level\\s+\\d+/);
+		expect(res.text).not.toMatch(/AI created:.*Level\s+\d+/);
 	});
 
 	test('GET /roles/:roleId/pathway/:pathwayId/level/:levelId renders', async () => {

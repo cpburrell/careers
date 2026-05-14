@@ -21,6 +21,19 @@
 
 		<% let level = role[pathway.id][levelId] %>
 		<% const skillsById = new Map((skills.skills || []).map(s => [s.id, s])) %>
+		<% const selectedSkillIds = new Set((level && Array.isArray(level.selected_skills) ? level.selected_skills : []).map(e => e.skill_id)) %>
+		<%
+			// Pre-compute add-vote entries keyed by skill so the category loop can filter by category
+			const allAddVoteEntries = votingAvailable
+				? Object.entries(presenceVotesBySkill)
+					.filter(([, p]) => Object.keys(p.add).length > 0)
+					.map(([skillId, p]) => {
+						const totalAddVotes = Object.values(p.add).reduce((s, c) => s + c, 0);
+						const levels = Object.entries(p.add).map(([lvl, c]) => ({ lvl: Number(lvl), count: c })).sort((a,b) => a.lvl - b.lvl);
+						return { skillId, totalAddVotes, levels, skill: skillsById.get(skillId) };
+					})
+				: [];
+		%>
 
 		<div style="display: flex; flex-direction: column; gap: 12px;">
 			<% skills.categories.forEach(category=> { %>
@@ -52,6 +65,7 @@
 											<th>Skill</th>
 											<th>Required Level</th>
 											<th>Description</th>
+											<% if (votingAvailable) { %><th>Community</th><% } %>
 										</tr>
 									</thead>
 									<tbody>
@@ -59,6 +73,10 @@
 											<% const competency = entry.required_level %>
 											<% let skillLevel = (skill.levels || []).find(l => l.level == competency) %>
 											<% let lev = (skills.levels || []).find(l => l.level == competency) %>
+											<% const skillVotes = votesBySkill[skill.id] || {} %>
+											<% const myVote = myVotes[skill.id] %>
+											<% const skillPresence = presenceVotesBySkill[skill.id] || { remove: 0, add: {} } %>
+											<% const myPresence = myPresenceVotes[skill.id] %>
 											<tr>
 												<td>
 													<div class="item-title">
@@ -86,11 +104,120 @@
 														<span style="color: var(--faint);">No skill-level description available.</span>
 													<% } %>
 												</td>
+												<% if (votingAvailable) { %>
+												<td>
+													<%
+														const totalVotes = Object.values(skillVotes).reduce((s, c) => s + c, 0);
+														const weightedSum = Object.entries(skillVotes).reduce((s, [lvl, c]) => s + Number(lvl) * c, 0);
+														const voteAvg = totalVotes > 0 ? (weightedSum / totalVotes).toFixed(1) : null;
+													%>
+													<% if (voteAvg) { %>
+														<div>
+															<span class="vote-avg">
+																Avg <span class="vote-avg__value">L<%= voteAvg %></span>
+																<span style="color:var(--muted);">(<%= totalVotes %> vote<%= totalVotes !== 1 ? 's' : '' %>)</span>
+															</span>
+														</div>
+													<% } %>
+
+													<% const voteLevels = Object.keys(skillVotes).map(Number).sort((a,b) => a-b) %>
+													<% if (voteLevels.length > 0) { %>
+														<div class="vote-bars">
+															<% voteLevels.forEach(lvl => { %>
+																<span class="vote-bar<%= myVote == lvl ? ' vote-bar--mine' : '' %>">
+																	L<%= lvl %> <span class="vote-bar__count">×<%= skillVotes[lvl] %></span>
+																</span>
+															<% }) %>
+														</div>
+													<% } %>
+
+													<form class="vote-form" method="POST" action="/roles/<%= role.id %>/pathway/<%= pathway.id %>/level/<%= levelId %>/vote">
+														<input type="hidden" name="skill_id" value="<%= skill.id %>">
+														<select name="suggested_level" aria-label="Suggested level for <%= skill.name %>">
+															<% for (let lvl = 1; lvl <= 7; lvl++) { %>
+																<option value="<%= lvl %>" <%= myVote == lvl ? 'selected' : '' %>>Level <%= lvl %></option>
+															<% } %>
+														</select>
+														<button type="submit"><%= myVote ? 'Update' : 'Vote' %></button>
+													</form>
+
+													<div class="remove-vote">
+														<% if (skillPresence.remove > 0) { %>
+															<span class="remove-vote__count"><%= skillPresence.remove %> removal vote<%= skillPresence.remove !== 1 ? 's' : '' %></span>
+														<% } %>
+														<form method="POST" action="/roles/<%= role.id %>/pathway/<%= pathway.id %>/level/<%= levelId %>/presence-vote">
+															<input type="hidden" name="skill_id" value="<%= skill.id %>">
+															<input type="hidden" name="vote_type" value="remove">
+															<button type="submit" class="<%= myPresence && myPresence.voteType === 'remove' ? 'voted' : '' %>">
+																<%= myPresence && myPresence.voteType === 'remove' ? '✓ Voted to remove' : 'Vote to remove' %>
+															</button>
+														</form>
+													</div>
+												</td>
+												<% } %>
 											</tr>
 										<% }) %>
 									</tbody>
 								</table>
 							</div>
+						<% } %>
+
+						<% if (votingAvailable) { %>
+							<%
+								const categoryAddVotes = allAddVoteEntries
+									.filter(e => e.skill && e.skill.category_id === category.id)
+									.sort((a, b) => b.totalAddVotes - a.totalAddVotes);
+								const categoryAddableSkills = (skills.skills || [])
+									.filter(s => s.category_id === category.id && !selectedSkillIds.has(s.id))
+									.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+							%>
+							<% if (categoryAddVotes.length > 0 || categoryAddableSkills.length > 0) { %>
+								<div class="additions-section" style="border-top: 1px solid var(--border); margin-top: 12px; padding-top: 12px;">
+									<div style="font-size:12px; color:var(--muted); font-weight:600; margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em;">Community additions</div>
+
+									<% if (categoryAddVotes.length > 0) { %>
+										<div class="additions-list">
+											<% categoryAddVotes.forEach(({ skillId, totalAddVotes, levels }) => { %>
+												<% const s = skillsById.get(skillId) %>
+												<div class="addition-row">
+													<% if (s) { %>
+														<a class="addition-row__name" href="/skills/<%= skillId %>/"><%= s.name %></a>
+														<span class="badge"><%= skillId %></span>
+													<% } else { %>
+														<span class="addition-row__name"><%= skillId %></span>
+													<% } %>
+													<div class="vote-bars" style="margin:0;">
+														<% levels.forEach(({ lvl, count }) => { %>
+															<% const myAdd = myPresenceVotes[skillId] %>
+															<span class="vote-bar<%= myAdd && myAdd.voteType === 'add' && myAdd.suggestedLevel == lvl ? ' vote-bar--mine' : '' %>">
+																L<%= lvl %> <span class="vote-bar__count">×<%= count %></span>
+															</span>
+														<% }) %>
+													</div>
+													<span style="font-size:11px;color:var(--muted);"><%= totalAddVotes %> vote<%= totalAddVotes !== 1 ? 's' : '' %></span>
+												</div>
+											<% }) %>
+										</div>
+									<% } %>
+
+									<% if (categoryAddableSkills.length > 0) { %>
+										<form class="vote-form" style="margin-top:8px;" method="POST" action="/roles/<%= role.id %>/pathway/<%= pathway.id %>/level/<%= levelId %>/presence-vote">
+											<input type="hidden" name="vote_type" value="add">
+											<select name="skill_id" aria-label="Skill to add">
+												<% categoryAddableSkills.forEach(s => { %>
+													<option value="<%= s.id %>"><%= s.name %> (<%= s.id %>)</option>
+												<% }) %>
+											</select>
+											<select name="suggested_level" aria-label="Suggested level">
+												<% for (let lvl = 1; lvl <= 7; lvl++) { %>
+													<option value="<%= lvl %>">Level <%= lvl %></option>
+												<% } %>
+											</select>
+											<button type="submit">Suggest addition</button>
+										</form>
+									<% } %>
+								</div>
+							<% } %>
 						<% } %>
 					</div>
 				</section>
